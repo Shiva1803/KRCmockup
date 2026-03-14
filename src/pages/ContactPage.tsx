@@ -36,10 +36,10 @@ export default function ContactPage() {
                                     For direct inquiries and order assistance.
                                 </p>
                                 <a
-                                    href="tel:+919876543210"
+                                    href="tel:+918979769881"
                                     className="mt-4 inline-block font-heading text-xl text-navy font-bold hover:text-maroon transition-colors duration-300"
                                 >
-                                    +91 98765 43210
+                                    +91 89797 69881
                                 </a>
                             </div>
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
                                     respond within 24 hours.
                                 </p>
                                 <a
-                                    href="https://wa.me/919876543210"
+                                    href="https://wa.me/918979769881"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block w-full text-center px-8 py-4 bg-olive text-ivory font-semibold text-sm tracking-widest uppercase hover:bg-olive/90 transition-all duration-300"

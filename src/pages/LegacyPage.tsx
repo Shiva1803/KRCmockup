@@ -28,15 +28,7 @@ export default function LegacyPage() {
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-gold" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
-                                The Kumaon Regiment, one of the most decorated regiments of the Indian Army, has a
-                                legacy that dates back centuries. From the towering peaks of the Himalayas to the
-                                arid deserts of Rajasthan, the soldiers of this regiment have defended our borders
-                                with unmatched valour.
-                            </p>
-                            <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
-                                Their sacrifice has earned them countless gallantry awards, including Param Vir Chakras,
-                                Maha Vir Chakras, and Vir Chakras. But behind every soldier stands a family — wives
-                                and mothers whose silent strength mirrors the courage of the battlefield.
+                                The Kumaon Regiment, one of the most decorated regiments of the Indian Army, has defended our borders from the Himalayas to Rajasthan with unmatched valour, earning countless Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. In 1977, DG Resettlement sponsored the <span className="font-semibold text-navy">"Surgical Bandage Factory"</span> project under the Kumaon Regimental Centre to provide weaving training for ESM, disabled soldiers, and their families. Inaugurated by <span className="font-semibold text-navy">Gen T N Raina</span> in <span className="font-semibold text-navy">1978</span>, this initiative recognized that behind every soldier stands a family whose silent strength mirrors battlefield courage.
                             </p>
                         </div>
                         <div className="fade-in">
@@ -74,7 +66,7 @@ export default function LegacyPage() {
                             <div className="relative">
                                 <div className="aspect-[3/4] bg-navy/10 overflow-hidden">
                                     <img
-                                        src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&q=80"
+                                        src="/veer-nari-contribution.png"
                                         alt="Veer Nari artisans at work"
                                         className="w-full h-full object-cover"
                                         loading="lazy"
@@ -99,16 +91,16 @@ export default function LegacyPage() {
                                 soldiers.
                             </p>
                             <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
-                                These remarkable women transform raw wool into works of art — shawls, stoles, blankets,
-                                and mufflers that carry the warmth of their resilience. Each product is not just a
+                                These remarkable women transform raw wool into works of art: <span className="font-semibold text-navy">Shawls</span>, <span className="font-semibold text-navy">Stoles</span>, <span className="font-semibold text-navy">Tweeds</span>,
+                                and <span className="font-semibold text-navy">Coats</span> that carry the warmth of their resilience. Each product is not just a
                                 textile; it is a testament to their strength.
                             </p>
 
                             {/* Impact Numbers */}
                             <div className="mt-10 grid grid-cols-2 gap-6">
                                 {[
-                                    { num: '500+', label: 'Women Employed' },
-                                    { num: '15+', label: 'Centres Active' },
+                                    { num: '400+', label: 'Women Employed' },
+                                    { num: '2', label: 'Centres Active' },
                                     { num: '25+', label: 'Products Range' },
                                     { num: '100%', label: 'Handcrafted' },
                                 ].map((item) => (
@@ -140,19 +132,19 @@ export default function LegacyPage() {
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
-                                year: 'The Beginning',
-                                title: 'A Mission of Honour',
-                                desc: 'KRC Woollens was established with a singular vision — to transform the lives of our martyrs\' families through meaningful employment in the wool craft tradition.',
+                                year: 'The Beginning (1977)',
+                                title: 'Surgical Bandage Factory',
+                                desc: 'In 1977, DG Resettlement sponsored the "Surgical Bandage Factory" project for ESM, disabled soldiers and their families to provide weaving training under the Kumaon Regimental Centre. Set up in the church building opposite Mankameshwar Temple, it was inaugurated by Gen T N Raina, Padam Bhushan, MVC, then COAS in 1978.',
                             },
                             {
-                                year: 'The Craft',
-                                title: 'Excellence in Every Thread',
-                                desc: 'We invested in training, premium raw materials, and quality processes to ensure that every product bearing the KRC name represents the highest standards of Indian craftsmanship.',
+                                year: 'Expansion into Textiles (1987)',
+                                title: 'Shawl and Tweed Development Centre',
+                                desc: 'In 1987, the "Shawl and Tweed Development Centre" was launched to provide weaving training to soldiers retiring from the Kumaon Regimental Centre. Known as Woollens (Unit-II), it was inaugurated by Lieutenant General R.N. Mahajan, VSM. Later, the surgical bandage factory and the Woollens were amalgamated and renamed as "KRC Woollens".',
                             },
                             {
-                                year: 'The Future',
+                                year: 'New Launch',
                                 title: 'Growing the Legacy',
-                                desc: 'Today, KRC Woollens continues to expand its reach, empowering more Veer Naris and introducing our premium woollens to a wider audience across India and beyond.',
+                                desc: 'An extension outlet is being operationalized at Kathgodam (Haldwani). Kumaon Regimental Centre Woollens has been playing a significant role in promoting and marketing handmade woollen products prepared and weaved by Veer Naris and Widows.',
                             },
                         ].map((item, i) => (
                             <div
@@ -160,7 +152,7 @@ export default function LegacyPage() {
                                 className="fade-in p-8 bg-ivory border border-navy/5 hover:border-gold/30 transition-all duration-500"
                                 style={{ transitionDelay: `${i * 100}ms` }}
                             >
-                                <span className="text-gold text-xs tracking-[0.3em] uppercase font-semibold">
+                                <span className="text-ochre text-xs tracking-[0.3em] uppercase font-semibold">
                                     {item.year}
                                 </span>
                                 <h3 className="mt-3 font-heading text-xl md:text-2xl font-bold text-navy">
