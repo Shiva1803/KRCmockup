@@ -10,6 +10,8 @@ import LegacyPage from './pages/LegacyPage'
 import ContactPage from './pages/ContactPage'
 import BulkOrderPage from './pages/BulkOrderPage'
 import CataloguePage from './pages/CataloguePage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import TermsConditionsPage from './pages/TermsConditionsPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -34,6 +36,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/bulk-order" element={<BulkOrderPage />} />
           <Route path="/catalogue" element={<CataloguePage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsConditionsPage />} />
         </Routes>
       </main>
       <Footer />

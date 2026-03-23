@@ -23,7 +23,7 @@ export default function ProductsPage() {
                         subtitle="Explore our range of premium woollen products, each crafted with meticulous care and tradition."
                     />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mt-12">
+                    <div className="grid grid-cols-2 gap-3 md:gap-8 mt-12">
                         {categories.map((cat, i) => (
                             <Link
                                 key={cat.slug}
@@ -36,18 +36,17 @@ export default function ProductsPage() {
                                     alt={cat.name}
                                     className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent" />
-                                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                                    <span className="text-gold text-xs tracking-[0.3em] uppercase">
+                                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8">
+                                    <span className="text-gold text-[0.6rem] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase">
                                         {cat.productCount} Products
                                     </span>
-                                    <h3 className="mt-2 font-heading text-2xl md:text-3xl font-bold text-ivory group-hover:text-gold transition-colors duration-300">
+                                    <h3 className="mt-1 md:mt-2 font-heading text-base md:text-2xl lg:text-3xl font-bold text-ivory group-hover:text-gold transition-colors duration-300">
                                         {cat.name}
                                     </h3>
-                                    <p className="mt-2 text-ivory/60 text-sm line-clamp-2">
+                                    <p className="mt-1 md:mt-2 text-ivory/60 text-[0.65rem] md:text-sm line-clamp-2">
                                         {cat.description}
                                     </p>
-                                    <span className="mt-4 inline-block text-gold text-sm tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-300">
+                                    <span className="mt-2 md:mt-4 inline-block text-gold text-[0.65rem] md:text-sm tracking-wider md:tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-300">
                                         Explore →
                                     </span>
                                 </div>
