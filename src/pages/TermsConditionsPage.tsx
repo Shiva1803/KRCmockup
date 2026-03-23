@@ -8,7 +8,7 @@ export default function TermsConditionsPage() {
             <div className="max-w-4xl mx-auto px-6">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="font-heading text-4xl md:text-5xl font-bold text-maroon">
+                    <h1 className="font-heading text-4xl md:text-5xl font-bold text-maroon mt-8">
                         Terms & Conditions
                     </h1>
                     <div className="mt-3 w-16 h-0.5 bg-gold mx-auto" />
