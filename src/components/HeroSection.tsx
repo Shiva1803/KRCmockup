@@ -46,6 +46,8 @@ export default function HeroSection({
                 <div className="absolute inset-0 bg-gradient-to-r from-[#191A2F] to-[#8A2128]" />
             ) : backgroundImage === 'gradient-blue-green' ? (
                 <div className="absolute inset-0 bg-gradient-to-r from-[#191A2F] to-[#354818]" />
+            ) : backgroundImage === 'gradient-blue-gold' ? (
+                <div className="absolute inset-0 bg-gradient-to-r from-[#191A2F] to-[#DBAD4F]" />
             ) : backgroundImage ? (
                 <div
                     className="absolute inset-0 bg-cover bg-center"
@@ -56,7 +58,7 @@ export default function HeroSection({
             )}
 
             {/* Overlay */}
-            {backgroundImage !== 'gradient-blue-red' && backgroundImage !== 'gradient-blue-green' && (
+            {backgroundImage !== 'gradient-blue-red' && backgroundImage !== 'gradient-blue-green' && backgroundImage !== 'gradient-blue-gold' && (
                 <div className={`absolute inset-0 ${overlayClasses[overlay]}`} />
             )}
 

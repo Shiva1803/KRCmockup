@@ -93,7 +93,9 @@ export default function CataloguePage() {
                             For bulk orders, custom specifications, or corporate gifting needs.
                         </p>
                         <Link
-                            to="/bulk-order"
+                            to="https://wa.me/918979769881"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-block mt-6 px-8 py-3.5 bg-gold text-navy font-semibold text-sm tracking-widest uppercase hover:bg-ochre transition-all duration-300"
                         >
                             Request Bulk Quote

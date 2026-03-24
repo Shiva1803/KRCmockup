@@ -42,12 +42,14 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/bulk-order"
+                                <a
+                                    href="https://wa.me/918979769881"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-sm text-navy/60 hover:text-ochre transition-colors duration-300 tracking-wide"
                                 >
                                     Bulk Order
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>

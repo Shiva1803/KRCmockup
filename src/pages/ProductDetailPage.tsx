@@ -94,12 +94,14 @@ export default function ProductDetailPage() {
 
                             {/* CTAs */}
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                <Link
-                                    to="/bulk-order"
+                                <a
+                                    href="https://wa.me/918979769881"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex-1 text-center px-8 py-3.5 bg-gold text-navy font-semibold text-sm tracking-widest uppercase hover:bg-ochre transition-all duration-300"
                                 >
                                     Bulk Order Inquiry
-                                </Link>
+                                </a>
                                 <Link
                                     to="/contact"
                                     className="flex-1 text-center px-8 py-3.5 border-2 border-navy text-navy font-semibold text-sm tracking-widest uppercase hover:bg-navy hover:text-ivory transition-all duration-300"

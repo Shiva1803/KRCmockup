@@ -46,12 +46,14 @@ export default function Navbar() {
                                     {link.label}
                                 </NavLink>
                             ))}
-                            <Link
-                                to="/bulk-order"
+                            <a
+                                href="https://wa.me/918979769881"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="ml-4 px-5 py-2 bg-gold text-navy text-sm font-semibold tracking-wider uppercase rounded-none hover:bg-ochre transition-colors duration-300"
                             >
                                 Bulk Order
-                            </Link>
+                            </a>
                         </div>
 
                         {/* Hamburger */}
@@ -95,13 +97,15 @@ export default function Navbar() {
                                 {link.label}
                             </NavLink>
                         ))}
-                        <Link
-                            to="/bulk-order"
+                        <a
+                            href="https://wa.me/918979769881"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setMobileOpen(false)}
                             className="block mt-4 px-5 py-3 bg-gold text-navy text-sm font-semibold tracking-wider uppercase text-center hover:bg-ochre transition-colors duration-300"
                         >
                             Bulk Order
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </nav>

@@ -69,7 +69,9 @@ export default function ProductsPage() {
                         We offer custom orders for corporate gifting, institutional needs, and wholesale purchases.
                     </p>
                     <Link
-                        to="/bulk-order"
+                        to="https://wa.me/918979769881"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="fade-in inline-block mt-8 px-8 py-3.5 bg-gold text-navy font-semibold text-sm tracking-widest uppercase hover:bg-ochre transition-all duration-300"
                     >
                         Request Quote

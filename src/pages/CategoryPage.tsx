@@ -35,10 +35,11 @@ export default function CategoryPage() {
                     category === 'shawls' ? 'gradient-blue-green' :
                     category === 'cosmetics' ? 'gradient-blue-green' :
                     category === 'knitwear' ? 'gradient-blue-red' :
+                    category === 'tweed' ? 'gradient-blue-gold' :
                     cat.image
                 }
                 height="medium"
-                showBackButton={category === 'accessories' || category === 'shawls' || category === 'cosmetics' || category === 'knitwear'}
+                showBackButton={category === 'accessories' || category === 'shawls' || category === 'cosmetics' || category === 'knitwear' || category === 'tweed'}
             />
 
             {/* Conditional Breadcrumb and Heading */}
@@ -228,6 +229,66 @@ export default function CategoryPage() {
                                             <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                 {product.name}
                                             </h3>
+                                            <div className="mt-2">
+                                                <span className="text-ivory font-semibold text-lg">
+                                                    {product.price}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Quote Section */}
+                    <div className="bg-navy py-16 md:py-20">
+                        <div className="max-w-4xl mx-auto px-6 text-center">
+                            <p className="font-heading text-2xl md:text-[28.62px] text-ivory italic leading-relaxed">
+                                "Not just crafted by hand, but shaped by courage, resilience,<br />and enduring spirit."
+                            </p>
+                            <div className="mt-6 w-16 h-0.5 bg-gold mx-auto" />
+                        </div>
+                    </div>
+                </>
+            ) : category === 'tweed' ? (
+                <>
+                    {/* Custom heading for tweed */}
+                    <section className="py-20 md:py-28 bg-ivory">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="mb-16 inline-block">
+                                <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy">
+                                    Explore Tweed
+                                </h2>
+                                <div className="mt-4 h-0.5 bg-maroon w-full" />
+                            </div>
+
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                                {products.map((product, i) => (
+                                    <div
+                                        key={product.id}
+                                        className="fade-in group overflow-hidden flex flex-col"
+                                        style={{ transitionDelay: `${i * 80}ms` }}
+                                    >
+                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
+                                            <img
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            />
+                                        </div>
+                                        <div className="bg-gradient-to-r from-[#191A2F] to-[#DBAD4F] p-5 md:p-6 flex-1 flex flex-col">
+                                            <div className="min-h-[3.5rem] flex items-center overflow-hidden">
+                                                <h3 className="font-heading text-lg md:text-xl font-bold text-ivory whitespace-nowrap">
+                                                    {product.name.length > 20 ? (
+                                                        <span className="inline-block animate-marquee">
+                                                            {product.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{product.name}
+                                                        </span>
+                                                    ) : (
+                                                        product.name
+                                                    )}
+                                                </h3>
+                                            </div>
                                             <div className="mt-2">
                                                 <span className="text-ivory font-semibold text-lg">
                                                     {product.price}

@@ -50,7 +50,7 @@ export const categories: Category[] = [
         name: 'Tweed',
         description: 'Premium tweed fabrics woven with strength, character, and a legacy of fine craftsmanship.',
         image: '/tweed.png',
-        productCount: 4,
+        productCount: 7,
     },
     {
         slug: 'cosmetics',
@@ -593,6 +593,64 @@ export const products: Product[] = [
         price: '₹1575',
         image: '/image 137 (25).png',
         category: 'knitwear',
+    },
+
+    // Tweed
+    {
+        id: 'tweed-cloth-4-5m-superfine',
+        name: 'Tweed Cloth 4.5 m(Superfine)',
+        description: 'Premium superfine tweed cloth, 4.5 meters.',
+        price: '₹3620',
+        image: '/image 138 (5).png',
+        category: 'tweed',
+    },
+    {
+        id: 'tweed-cloth-almora',
+        name: 'Tweed Cloth (Almora)',
+        description: 'Traditional Almora tweed cloth.',
+        price: '₹2251',
+        image: '/image 138 (6).png',
+        category: 'tweed',
+    },
+    {
+        id: 'tweed-2mtr-superfine',
+        name: 'Tweed 2 Mtr (Superfine)',
+        description: 'Superfine tweed cloth, 2 meters.',
+        price: '₹1810',
+        image: '/image 138 (5).png',
+        category: 'tweed',
+    },
+    {
+        id: 'tweed-2mtr-almora',
+        name: 'Tweed 2 Mtr (Almora)',
+        description: 'Almora tweed cloth, 2 meters.',
+        price: '₹1188',
+        image: '/image 138 (6).png',
+        category: 'tweed',
+    },
+    {
+        id: 'tweed-3-5mtr-almora',
+        name: 'Tweed 3.5 Mtr (Almora)',
+        description: 'Almora tweed cloth, 3.5 meters.',
+        price: '₹1926',
+        image: '/image 139.png',
+        category: 'tweed',
+    },
+    {
+        id: 'tweed-3-5mtr-superfine',
+        name: 'Tweed 3.5 Mtr (Superfine)',
+        description: 'Superfine tweed cloth, 3.5 meters.',
+        price: '₹2940',
+        image: '/image 139 (1).png',
+        category: 'tweed',
+    },
+    {
+        id: 'tweed-kumaoni-check',
+        name: 'Tweed Kumaoni Check',
+        description: 'Traditional Kumaoni check pattern tweed.',
+        price: '₹1018',
+        image: '/image 139 (2).png',
+        category: 'tweed',
     },
 ]
 
