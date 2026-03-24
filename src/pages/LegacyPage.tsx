@@ -27,8 +27,8 @@ export default function LegacyPage() {
                                 The Regiment Story
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-gold" />
-                            <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
-                                The Kumaon Regiment, one of the most decorated regiments of the Indian Army, has defended our borders from the Himalayas to Rajasthan with unmatched valour, earning countless Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. In 1977, DG Resettlement sponsored the <span className="font-semibold text-navy">"Surgical Bandage Factory"</span> project under the Kumaon Regimental Centre to provide weaving training for ESM, disabled soldiers, and their families. Inaugurated by <span className="font-semibold text-navy">Gen T N Raina</span> in <span className="font-semibold text-navy">1978</span>, this initiative recognized that behind every soldier stands a family whose silent strength mirrors battlefield courage.
+                            <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
+                                The Kumaon Regiment of the Indian Army carries a legacy shaped in the highlands of the Himalayas. Across generations, its soldiers have stood watch over the nation's most formidable frontiers with quiet resolve and unyielding courage. Through generations of duty, their valour has been honoured with the nation's highest gallantry distinctions, including Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. Yet beyond the battlefield lies a silent pillar of strength, the families whose resilience and grace echo the same spirit that guards the nation.
                             </p>
                         </div>
                         <div className="fade-in">
@@ -72,7 +72,7 @@ export default function LegacyPage() {
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/30 -z-10" />
+                                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-amber-900 -z-10" />
                             </div>
                         </div>
                         <div className="fade-in order-1 lg:order-2">
@@ -85,30 +85,26 @@ export default function LegacyPage() {
                                 <span className="text-maroon">Contribution</span>
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-gold" />
-                            <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
-                                The Veer Nari programme is the heart of KRC Woollens. We provide dignified employment,
-                                skill development, and financial independence to the wives and mothers of our martyred
-                                soldiers.
+                            <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
+                                At the heart of KRC Woollens lies the Veer Nari programme, an initiative rooted in dignity, purpose, and quiet resilience. Within the hills of Kumaon, a community of women connected to the legacy of fallen soldiers carry forward a different kind of service: one that rebuilds strength through craft and self-reliance.
                             </p>
-                            <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
-                                These remarkable women transform raw wool into works of art: <span className="font-semibold text-navy">Shawls</span>, <span className="font-semibold text-navy">Stoles</span>, <span className="font-semibold text-navy">Tweeds</span>,
-                                and <span className="font-semibold text-navy">Coats</span> that carry the warmth of their resilience. Each product is not just a
-                                textile; it is a testament to their strength.
+                            <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
+                                Here, raw wool is patiently transformed by skilled hands into finely woven shawls, stoles, blankets, and mufflers. Each thread carries a story - of endurance, of quiet courage, and of lives that continue to stand strong in the face of sacrifice. What emerges is more than a textile; it is a living expression of resilience, shaped by hands that honour a legacy.
                             </p>
 
                             {/* Impact Numbers */}
                             <div className="mt-10 grid grid-cols-2 gap-6">
                                 {[
                                     { num: '400+', label: 'Women Employed' },
-                                    { num: '2', label: 'Centres Active' },
-                                    { num: '25+', label: 'Products Range' },
-                                    { num: '100%', label: 'Handcrafted' },
+                                    { num: '10,000+', label: 'Products Crafted' },
+                                    { num: '100%', label: 'Pure Wool' },
+                                    { num: '50+', label: 'Years of Heritage' },
                                 ].map((item) => (
                                     <div key={item.label} className="border-l-2 border-gold pl-4">
-                                        <span className="block font-heading text-2xl font-bold text-navy">
+                                        <span className="block font-heading text-2xl md:text-3xl font-bold text-navy">
                                             {item.num}
                                         </span>
-                                        <span className="text-navy/50 text-xs tracking-wider uppercase">
+                                        <span className="text-navy/50 text-xs md:text-sm tracking-wider uppercase">
                                             {item.label}
                                         </span>
                                     </div>
@@ -125,26 +121,32 @@ export default function LegacyPage() {
                     <div className="fade-in max-w-3xl mx-auto text-center">
                         <SectionHeading
                             title="Heritage & Founding"
-                            subtitle="From regimental tradition to national pride — the story of KRC Woollens."
+                            subtitle={
+                                <>
+                                    From regimental tradition to national pride.
+                                    <br />
+                                    The story of KRC Woollens.
+                                </>
+                            }
                         />
                     </div>
 
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
-                                year: 'The Beginning (1977)',
-                                title: 'Surgical Bandage Factory',
-                                desc: 'In 1977, DG Resettlement sponsored the "Surgical Bandage Factory" project for ESM, disabled soldiers and their families to provide weaving training under the Kumaon Regimental Centre. Set up in the church building opposite Mankameshwar Temple, it was inaugurated by Gen T N Raina, Padam Bhushan, MVC, then COAS in 1978.',
+                                year: 'The Beginning',
+                                title: 'A Mission of Honour',
+                                desc: 'KRC Woollens was founded in 1977 under the Kumaon Regimental Centre to create dignity and opportunity for the families of fallen soldiers, and was inaugurated by General T. N. Raina, then Chief of Army Staff.',
                             },
                             {
-                                year: 'Expansion into Textiles (1987)',
-                                title: 'Shawl and Tweed Development Centre',
-                                desc: 'In 1987, the "Shawl and Tweed Development Centre" was launched to provide weaving training to soldiers retiring from the Kumaon Regimental Centre. Known as Woollens (Unit-II), it was inaugurated by Lieutenant General R.N. Mahajan, VSM. Later, the surgical bandage factory and the Woollens were amalgamated and renamed as "KRC Woollens".',
+                                year: 'The Craft',
+                                title: 'Craft in Every Thread',
+                                desc: 'Through dedicated training, carefully sourced raw wool, and refined craftsmanship, every product bearing the KRC name reflects the finest traditions of Indian wool weaving.',
                             },
                             {
-                                year: 'New Launch',
+                                year: 'The Future',
                                 title: 'Growing the Legacy',
-                                desc: 'An extension outlet is being operationalized at Kathgodam (Haldwani). Kumaon Regimental Centre Woollens has been playing a significant role in promoting and marketing handmade woollen products prepared and weaved by Veer Naris and Widows.',
+                                desc: 'Today KRC Woollens continues to grow its reach, supporting more Veer Naris while bringing the Warmth of our Woollens to audiences across India and beyond',
                             },
                         ].map((item, i) => (
                             <div
@@ -158,7 +160,7 @@ export default function LegacyPage() {
                                 <h3 className="mt-3 font-heading text-xl md:text-2xl font-bold text-navy">
                                     {item.title}
                                 </h3>
-                                <p className="mt-4 text-navy/60 text-sm leading-relaxed">{item.desc}</p>
+                                <p className="mt-4 text-navy/60 text-sm leading-relaxed text-justify">{item.desc}</p>
                             </div>
                         ))}
                     </div>

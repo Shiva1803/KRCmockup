@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface HeroSectionProps {
     title: string
@@ -9,6 +9,7 @@ interface HeroSectionProps {
     overlay?: 'dark' | 'navy' | 'olive' | 'maroon'
     height?: 'full' | 'large' | 'medium'
     align?: 'center' | 'left'
+    showBackButton?: boolean
 }
 
 export default function HeroSection({
@@ -20,7 +21,9 @@ export default function HeroSection({
     overlay = 'dark',
     height = 'full',
     align = 'center',
+    showBackButton = false,
 }: HeroSectionProps) {
+    const navigate = useNavigate()
     const heightClasses = {
         full: 'min-h-screen',
         large: 'min-h-[75vh]',
@@ -39,7 +42,11 @@ export default function HeroSection({
             className={`relative ${heightClasses[height]} flex items-center justify-center overflow-hidden`}
         >
             {/* Background */}
-            {backgroundImage ? (
+            {backgroundImage === 'gradient-blue-red' ? (
+                <div className="absolute inset-0 bg-gradient-to-r from-[#191A2F] to-[#8A2128]" />
+            ) : backgroundImage === 'gradient-blue-green' ? (
+                <div className="absolute inset-0 bg-gradient-to-r from-[#191A2F] to-[#354818]" />
+            ) : backgroundImage ? (
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -49,10 +56,32 @@ export default function HeroSection({
             )}
 
             {/* Overlay */}
-            <div className={`absolute inset-0 ${overlayClasses[overlay]}`} />
+            {backgroundImage !== 'gradient-blue-red' && backgroundImage !== 'gradient-blue-green' && (
+                <div className={`absolute inset-0 ${overlayClasses[overlay]}`} />
+            )}
 
             {/* Decorative line */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+
+            {/* Back Button */}
+            {showBackButton && (
+                <button
+                    onClick={() => navigate(-1)}
+                    className="absolute left-4 md:left-6 top-6 md:top-1/2 md:-translate-y-1/2 z-20 text-ivory hover:text-gold transition-colors duration-300"
+                    aria-label="Go back"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="w-7 h-7 md:w-10 md:h-10"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+            )}
 
             {/* Content */}
             <div

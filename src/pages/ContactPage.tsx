@@ -37,7 +37,7 @@ export default function ContactPage() {
                                 </p>
                                 <a
                                     href="tel:+918979769881"
-                                    className="mt-4 inline-block font-heading text-xl text-navy font-bold hover:text-maroon transition-colors duration-300"
+                                    className="mt-4 inline-block text-xl text-navy font-bold hover:text-maroon transition-colors duration-300"
                                 >
                                     +91 89797 69881
                                 </a>
