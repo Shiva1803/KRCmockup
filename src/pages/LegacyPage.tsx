@@ -121,13 +121,7 @@ export default function LegacyPage() {
                     <div className="fade-in max-w-3xl mx-auto text-center">
                         <SectionHeading
                             title="Heritage & Founding"
-                            subtitle={
-                                <>
-                                    From regimental tradition to national pride.
-                                    <br />
-                                    The story of KRC Woollens.
-                                </>
-                            }
+                            subtitle="From regimental tradition to national pride. The story of KRC Woollens."
                         />
                     </div>
 

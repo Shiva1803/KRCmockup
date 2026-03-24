@@ -1,6 +1,8 @@
+import React from 'react'
+
 interface SectionHeadingProps {
     title: string
-    subtitle?: string
+    subtitle?: React.ReactNode
     light?: boolean
 }
 
