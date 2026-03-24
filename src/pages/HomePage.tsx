@@ -28,7 +28,7 @@ export default function HomePage() {
                         Woven with Honour
                     </h1>
                     <p className="mt-6 text-ivory/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
-                        Premium handcrafted woollens by the brave women of India's martyred soldiers — where every thread tells a story of courage, sacrifice, and resilience.
+                        Premium handcrafted woollens by the brave women of India's martyred soldiers, where every thread tells a story of courage, sacrifice, and resilience.
                     </p>
                     <div className="mt-10">
                         <Link

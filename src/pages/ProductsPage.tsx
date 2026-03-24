@@ -28,8 +28,11 @@ export default function ProductsPage() {
                             <Link
                                 key={cat.slug}
                                 to={`/products/${cat.slug}`}
-                                className="fade-in group relative aspect-[4/3] overflow-hidden bg-navy"
-                                style={{ transitionDelay: `${i * 100}ms` }}
+                                className="fade-in group relative overflow-hidden bg-navy"
+                                style={{ 
+                                    transitionDelay: `${i * 100}ms`,
+                                    aspectRatio: '174 / 121'
+                                }}
                             >
                                 <img
                                     src={cat.image}
@@ -37,16 +40,16 @@ export default function ProductsPage() {
                                     className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
                                 />
                                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8">
-                                    <span className="text-gold text-[0.6rem] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase">
+                                    <span className="text-gold text-[8px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase">
                                         {cat.productCount} Products
                                     </span>
-                                    <h3 className="mt-1 md:mt-2 font-heading text-base md:text-2xl lg:text-3xl font-bold text-ivory group-hover:text-gold transition-colors duration-300">
+                                    <h3 className="mt-1 md:mt-2 font-heading text-[14px] md:text-2xl lg:text-3xl font-bold text-ivory group-hover:text-gold transition-colors duration-300">
                                         {cat.name}
                                     </h3>
-                                    <p className="mt-1 md:mt-2 text-ivory/60 text-[0.65rem] md:text-sm line-clamp-2">
+                                    <p className="mt-1 md:mt-2 text-ivory/60 text-[8px] md:text-sm line-clamp-2">
                                         {cat.description}
                                     </p>
-                                    <span className="mt-2 md:mt-4 inline-block text-gold text-[0.65rem] md:text-sm tracking-wider md:tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-300">
+                                    <span className="mt-2 md:mt-4 inline-block text-gold text-[8px] md:text-sm tracking-wider md:tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-300">
                                         Explore →
                                     </span>
                                 </div>
