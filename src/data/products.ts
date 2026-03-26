@@ -22,7 +22,7 @@ export const categories: Category[] = [
         name: 'Outerwear',
         description: 'Finely tailored outerwear crafted with precision, warmth, and enduring Himalayan heritage.',
         image: '/outerwear.png',
-        productCount: 6,
+        productCount: 12,
     },
     {
         slug: 'knitwear',
@@ -69,6 +69,104 @@ export const categories: Category[] = [
 ]
 
 export const products: Product[] = [
+    // Outerwear
+    {
+        id: 'ladies-jacket',
+        name: 'Ladies Jacket',
+        description: 'Stylish ladies jacket with premium finish.',
+        price: '₹2907',
+        image: '/Outerwear-1.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-sl-coat',
+        name: 'Ladies S/L Coat',
+        description: 'Sleeveless coat for ladies.',
+        price: '₹3210',
+        image: '/Outerwear-2.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-coat-superfine',
+        name: 'Ladies Coat (Superfine)',
+        description: 'Superfine ladies coat with elegant design.',
+        price: '₹5370',
+        image: '/Outerwear-3.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-coat-almora',
+        name: 'Ladies Coat (Almora)',
+        description: 'Traditional Almora style ladies coat.',
+        price: '₹4526',
+        image: '/Outerwear-4.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-long-coat-kumaoni',
+        name: 'Ladies long coat (Kumaoni)',
+        description: 'Long coat with Kumaoni design.',
+        price: '₹5177',
+        image: '/Outerwear-5.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-long-coat-superfine',
+        name: 'Ladies Long Coat (Superfine)',
+        description: 'Superfine long coat for ladies.',
+        price: '₹6470',
+        image: '/Outerwear-6.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-long-coat-almora',
+        name: 'Ladies Long Coat (Almora)',
+        description: 'Almora style long coat for ladies.',
+        price: '₹5101',
+        image: '/Outerwear-7.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'gents-sl-coat-superfine',
+        name: 'Gents S/L Coat (Superfine)',
+        description: 'Superfine sleeveless coat for gents.',
+        price: '₹3210',
+        image: '/Outerwear-8.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'gents-coat-almora',
+        name: 'Gents Coat (Almora)',
+        description: 'Almora style coat for gents.',
+        price: '₹4426',
+        image: '/Outerwear-9.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'gents-coat-superfine',
+        name: 'Gents Coat (Superfine)',
+        description: 'Superfine coat for gents.',
+        price: '₹5540',
+        image: '/Outerwear-10.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'gents-coat-kumaoni',
+        name: 'Gents Coat (Kumaoni)',
+        description: 'Kumaoni style coat for gents.',
+        price: '₹4418',
+        image: '/Outerwear-11.png',
+        category: 'outerwear',
+    },
+    {
+        id: 'ladies-sleeveless-coat-almora',
+        name: 'Ladies Sleeveless Coat Almora',
+        description: 'Sleeveless Almora coat for ladies.',
+        price: '₹2638',
+        image: '/Outerwear-12.png',
+        category: 'outerwear',
+    },
+
     // Shawls
     {
         id: 'shawl-bageshwari',
@@ -593,6 +691,557 @@ export const products: Product[] = [
         price: '₹1575',
         image: '/image 137 (25).png',
         category: 'knitwear',
+    },
+
+    // Farm Bites - Oils
+    {
+        id: 'black-mustard-oil',
+        name: 'Black Mustard Oil',
+        description: 'Pure black mustard oil.',
+        price: '₹380',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'hemp-seed-oil',
+        name: 'Hemp Seed Oil',
+        description: 'Natural hemp seed oil.',
+        price: '₹380',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'yellow-mustard-oil',
+        name: 'Yellow Mustard Oil',
+        description: 'Pure yellow mustard oil.',
+        price: '₹380',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'flax-seed-oil',
+        name: 'Flax Seed Oil',
+        description: 'Nutritious flax seed oil.',
+        price: '₹140',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'sesame-oil',
+        name: 'Sesame Oil',
+        description: 'Pure sesame oil.',
+        price: '₹585',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'mango-almond-oil',
+        name: 'Mango Almond Oil',
+        description: 'Exotic mango almond oil.',
+        price: '₹250',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'sunflower-oil',
+        name: 'Sunflower Oil',
+        description: 'Pure sunflower oil.',
+        price: '₹485',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'groundnut-oil',
+        name: 'Groundnut Oil',
+        description: 'Natural groundnut oil.',
+        price: '₹440',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'coconut-oil',
+        name: 'Coconut Oil',
+        description: 'Pure coconut oil.',
+        price: '₹478',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'castor-seed-oil',
+        name: 'Castor Seed Oil',
+        description: 'Natural castor seed oil.',
+        price: '₹140',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'bitter-apricot-oil',
+        name: 'Bitter Apricot Oil',
+        description: 'Premium bitter apricot oil.',
+        price: '₹250',
+        image: '/placeholder-oil.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+
+    // Farm Bites - Honey
+    {
+        id: 'multi-floral-honey',
+        name: 'Multi Floral Honey',
+        description: 'Natural multi floral honey.',
+        price: '₹480',
+        image: '/image 137 (28).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'honey',
+        },
+    },
+    {
+        id: 'lychee-floral-honey',
+        name: 'Lychee Floral Honey',
+        description: 'Sweet lychee floral honey.',
+        price: '₹485',
+        image: '/image 137 (29).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'honey',
+        },
+    },
+    {
+        id: 'jamun-floral-honey',
+        name: 'Jamun Floral Honey',
+        description: 'Rich jamun floral honey.',
+        price: '₹600',
+        image: '/image 137 (30).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'honey',
+        },
+    },
+    {
+        id: 'acacia-floral-honey',
+        name: 'Acacia Floral Honey',
+        description: 'Pure acacia floral honey.',
+        price: '₹600',
+        image: '/image 137 (31).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'honey',
+        },
+    },
+    {
+        id: 'himalayan-forest-honey',
+        name: 'Himalayan Forest Honey',
+        description: 'Wild Himalayan forest honey.',
+        price: '₹450',
+        image: '/image 138 (9).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'honey',
+        },
+    },
+    {
+        id: 'ajwain-floral-honey',
+        name: 'Ajwain Floral Honey',
+        description: 'Aromatic ajwain floral honey.',
+        price: '₹600',
+        image: '/image 141 (1).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'honey',
+        },
+    },
+
+    // Farm Bites - Ghee
+    {
+        id: 'desi-ghee',
+        name: 'Desi Ghee',
+        description: 'Pure desi ghee.',
+        price: '₹850',
+        image: '/image 137 (26).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'ghee',
+        },
+    },
+    {
+        id: 'bilona-cow-ghee',
+        name: 'Bilona Cow Ghee',
+        description: 'Traditional bilona cow ghee.',
+        price: '₹1399',
+        image: '/image 137 (27).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'ghee',
+        },
+    },
+    {
+        id: 'badri-cow-ghee',
+        name: 'Badri Cow Ghee',
+        description: 'Premium badri cow ghee.',
+        price: '₹1250',
+        image: '/image 141.png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'ghee',
+        },
+    },
+
+    // Farm Bites - Preserves
+    {
+        id: 'plum-chutney',
+        name: 'Plum Chutney',
+        description: 'Tangy plum chutney.',
+        price: '₹180',
+        image: '/image 137 (49).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'plum-jam',
+        name: 'Plum Jam',
+        description: 'Sweet plum jam.',
+        price: '₹285',
+        image: '/image 137 (50).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'plum-pickle',
+        name: 'Plum Pickle',
+        description: 'Spicy plum pickle.',
+        price: '₹300',
+        image: '/image 141 (4).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'apricot-jam',
+        name: 'Apricot Jam',
+        description: 'Delicious apricot jam.',
+        price: '₹180',
+        image: '/image 141 (5).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'apricot-chutney',
+        name: 'Apricot Chutney',
+        description: 'Flavorful apricot chutney.',
+        price: '₹180',
+        image: '/image 141 (6).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'peach-jam',
+        name: 'Peach Jam',
+        description: 'Sweet peach jam.',
+        price: '₹180',
+        image: '/image 141 (7).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'methi-dana-pickle',
+        name: 'Methi Dana Pickle',
+        description: 'Aromatic methi dana pickle.',
+        price: '₹220',
+        image: '/image 137 (51).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'garlic-pickle',
+        name: 'Garlic Pickle',
+        description: 'Spicy garlic pickle.',
+        price: '₹200',
+        image: '/image 141 (8).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+    {
+        id: 'bitter-gourd-pickle',
+        name: 'Bitter Gourd Pickle',
+        description: 'Traditional bitter gourd pickle.',
+        price: '₹210',
+        image: '/image 141 (9).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'preserves',
+        },
+    },
+
+    // Farm Bites - Teas
+    {
+        id: 'chamomile-tea',
+        name: 'Chamomile Tea',
+        description: 'Soothing chamomile tea.',
+        price: '₹175',
+        image: '/image 138 (10).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'himalayan-pine-needle-tea',
+        name: 'Himalayan Pine Needle Tea',
+        description: 'Refreshing pine needle tea.',
+        price: '₹110',
+        image: '/image 137 (41).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'tulsi-rhododendron-tea',
+        name: 'Tulsi Rhododendron Tea',
+        description: 'Herbal tulsi rhododendron tea.',
+        price: '₹200',
+        image: '/image 141 (2).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'himalayan-peppermint-tea',
+        name: 'Himalayan Peppermint Tea',
+        description: 'Fresh peppermint tea.',
+        price: '₹160',
+        image: '/image 137 (42).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'lemongrass-tea',
+        name: 'Lemongrass Tea',
+        description: 'Aromatic lemongrass tea.',
+        price: '₹140',
+        image: '/image 137 (43).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'nettle-chamomile-tea',
+        name: 'Nettle Chamomile Tea',
+        description: 'Calming nettle chamomile blend.',
+        price: '₹160',
+        image: '/image 137 (44).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'burash-namak',
+        name: 'Burash Namak',
+        description: 'Traditional burash namak.',
+        price: '₹150',
+        image: '/image 137 (45).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'himalayan-tulsi-herbal-tea',
+        name: 'Himalayan Tulsi Herbal Tea',
+        description: 'Pure tulsi herbal tea.',
+        price: '₹200',
+        image: '/image 141 (3).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'chamomile-green-tea',
+        name: 'Chamomile Green Tea',
+        description: 'Refreshing chamomile green tea.',
+        price: '₹249',
+        image: '/image 137 (46).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'himalayan-mixed-herbal-tea',
+        name: 'Himalayan Mixed Herbal Tea',
+        description: 'Blend of Himalayan herbs.',
+        price: '₹160',
+        image: '/image 137 (47).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+    {
+        id: 'rosemary-dried-leaves',
+        name: 'Rosemary Dried Leaves',
+        description: 'Aromatic rosemary leaves.',
+        price: '₹140',
+        image: '/image 137 (48).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'teas',
+        },
+    },
+
+    // Farm Bites - Grains and Staples
+    {
+        id: 'finger-millet-flour',
+        name: 'Finger Millet Flour',
+        description: 'Nutritious finger millet flour.',
+        price: '₹110',
+        image: '/image 137 (32).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'rajma',
+        name: 'Rajma',
+        description: 'Premium quality rajma.',
+        price: '₹300',
+        image: '/image 137 (33).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'black-soya-bean',
+        name: 'Black Soya Bean',
+        description: 'Organic black soya bean.',
+        price: '₹190',
+        image: '/image 137 (34).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'horse-gram',
+        name: 'Horse Gram',
+        description: 'Protein-rich horse gram.',
+        price: '₹270',
+        image: '/image 137 (35).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'himalayan-brown-rice',
+        name: 'Himalayan Brown Rice',
+        description: 'Wholesome brown rice.',
+        price: '₹190',
+        image: '/image 137 (36).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'fragrant-red-rice',
+        name: 'Fragrant Red Rice',
+        description: 'Aromatic red rice.',
+        price: '₹110',
+        image: '/image 137 (37).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'rain-fed-rice',
+        name: 'Rain-Fed Rice',
+        description: 'Naturally grown rain-fed rice.',
+        price: '₹130',
+        image: '/image 137 (38).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'pisi-noon-salt-flavor',
+        name: 'Pisi Noon (Salt Flavor)',
+        description: 'Traditional pisi noon with salt.',
+        price: '₹150',
+        image: '/image 137 (39).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
+    },
+    {
+        id: 'barnyard-millet',
+        name: 'Barnyard Millet',
+        description: 'Healthy barnyard millet.',
+        price: '₹270',
+        image: '/image 137 (40).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'grains',
+        },
     },
 
     // Tweed
