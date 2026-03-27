@@ -175,7 +175,7 @@ export default function LegacyPage() {
                         href="/products"
                         className="fade-in inline-block mt-8 px-8 py-3.5 bg-gold text-navy font-semibold text-sm tracking-widest uppercase hover:bg-ochre transition-all duration-300"
                     >
-                        Shop Now
+                        View Catalogue
                     </a>
                 </div>
             </section>
