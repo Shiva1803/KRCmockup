@@ -714,8 +714,8 @@ export const products: Product[] = [
     // Knitwear
     {
         id: 'poncho',
-        name: 'Triangle Shawl',
-        description: 'Soft and comfortable triangle shawl with timeless design.',
+        name: 'Poncho',
+        description: 'Soft and comfortable poncho with timeless design.',
         price: '₹1470',
         image: '/image 137 (25).png',
         category: 'knitwear',

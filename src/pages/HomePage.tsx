@@ -73,13 +73,10 @@ export default function HomePage() {
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-gold" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
-                                KRC Woollens was born from a mission greater than commerce. We provide dignified
-                                employment to the wives and mothers of our martyred soldiers — the Veer Naris —
-                                transforming their skilled hands into artisans of premium woollen craft.
+                                KRC Woollens was born from a mission greater than commerce. We provide dignified employment to the wives and mothers of our martyred soldiers. The Veer Naris, transforming their skilled hands into artisans of premium woollen craft.
                             </p>
                             <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
-                                Every product you purchase carries the warmth of their resilience and the pride of
-                                a nation that honours its heroes.
+                                Every product you purchase carries the warmth of their resilience and the pride of a nation that honours its heroes.
                             </p>
                             <Link
                                 to="/legacy"

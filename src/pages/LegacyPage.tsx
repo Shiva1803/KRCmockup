@@ -28,7 +28,7 @@ export default function LegacyPage() {
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-gold" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
-                                The Kumaon Regiment of the Indian Army carries a legacy shaped in the highlands of the Himalayas. Across generations, its soldiers have stood watch over the nation's most formidable frontiers with quiet resolve and unyielding courage. Through generations of duty, their valour has been honoured with the nation's highest gallantry distinctions, including Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. Yet beyond the battlefield lies a silent pillar of strength, the families whose resilience and grace echo the same spirit that guards the nation.
+                                The Kumaon Regiment of the Indian Army carries a legacy shaped in the highlands of the Himalayas. Across generations, Our soldiers have stood watch over the nation's most formidable frontiers with quiet resolve and unyielding courage. Through generations of duty, their valour has been honoured with the nation's highest gallantry distinctions, including Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. Yet beyond the battlefield lies a silent pillar of strength, the families whose resilience and grace echo the same spirit that guards the nation.
                             </p>
                         </div>
                         <div className="fade-in">
@@ -95,7 +95,7 @@ export default function LegacyPage() {
                             {/* Impact Numbers */}
                             <div className="mt-10 grid grid-cols-2 gap-6">
                                 {[
-                                    { num: '400+', label: 'Women Employed' },
+                                    { num: '500+', label: 'Veer Naris Employed' },
                                     { num: '10,000+', label: 'Products Crafted' },
                                     { num: '100%', label: 'Pure Wool' },
                                     { num: '50+', label: 'Years of Heritage' },
@@ -140,7 +140,7 @@ export default function LegacyPage() {
                             {
                                 year: 'The Future',
                                 title: 'Growing the Legacy',
-                                desc: 'Today KRC Woollens continues to grow its reach, supporting more Veer Naris while bringing the Warmth of our Woollens to audiences across India and beyond',
+                                desc: 'Today KRC Woollens continues to grow its reach, supporting more Veer Naris while bringing the Warmth of our Woollens to audiences across India and beyond.',
                             },
                         ].map((item, i) => (
                             <div
@@ -166,7 +166,7 @@ export default function LegacyPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-olive/90 via-olive to-olive/80" />
                 <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
                     <h2 className="fade-in font-heading text-3xl md:text-4xl text-ivory font-bold">
-                        Be Part of the Legacy
+                        Be a Part of the Legacy
                     </h2>
                     <p className="fade-in mt-4 text-ivory/70 text-base md:text-lg">
                         Every purchase supports the Veer Nari mission. Explore our collection and wear a story of courage.

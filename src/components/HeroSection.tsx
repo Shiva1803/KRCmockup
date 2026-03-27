@@ -39,7 +39,7 @@ export default function HeroSection({
 
     return (
         <section
-            className={`relative ${heightClasses[height]} flex items-center justify-center overflow-hidden pt-20`}
+            className={`relative ${heightClasses[height]} flex items-center justify-center overflow-hidden pt-32`}
         >
             {/* Background */}
             {backgroundImage === 'gradient-blue-red' ? (
