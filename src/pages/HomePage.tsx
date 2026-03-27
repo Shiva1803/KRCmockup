@@ -143,9 +143,10 @@ export default function HomePage() {
                                 {
                                     title: 'Download Catalogue',
                                     desc: 'View our complete product range with specifications.',
-                                    link: '/catalogue',
+                                    link: '/samplecatalogue.pdf',
                                     icon: '→',
                                     bg: '/catalogue-bg.webp',
+                                    download: true,
                                 },
                             ].map((card) => (
                                 card.external ? (
@@ -154,6 +155,28 @@ export default function HomePage() {
                                         href={card.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className="group relative overflow-hidden min-h-[220px] flex flex-col justify-end p-8 border border-navy/5 hover:border-gold/40 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500"
+                                    >
+                                        <div
+                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                            style={{ backgroundImage: `url(${card.bg})` }}
+                                        />
+                                        <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/70 transition-colors duration-500" />
+                                        <div className="relative z-10">
+                                            <h3 className="font-heading text-xl md:text-2xl font-bold text-ivory group-hover:text-gold transition-colors duration-300">
+                                                {card.title}
+                                            </h3>
+                                            <p className="mt-3 text-ivory/70 text-sm leading-relaxed">{card.desc}</p>
+                                            <span className="mt-6 inline-block text-gold text-xl group-hover:translate-x-2 transition-transform duration-300">
+                                                {card.icon}
+                                            </span>
+                                        </div>
+                                    </a>
+                                ) : card.download ? (
+                                    <a
+                                        key={card.title}
+                                        href={card.link}
+                                        download
                                         className="group relative overflow-hidden min-h-[220px] flex flex-col justify-end p-8 border border-navy/5 hover:border-gold/40 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500"
                                     >
                                         <div

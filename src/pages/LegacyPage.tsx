@@ -172,7 +172,8 @@ export default function LegacyPage() {
                         Every purchase supports the Veer Nari mission. Explore our collection and wear a story of courage.
                     </p>
                     <a
-                        href="/products"
+                        href="/samplecatalogue.pdf"
+                        download
                         className="fade-in inline-block mt-8 px-8 py-3.5 bg-gold text-navy font-semibold text-sm tracking-widest uppercase hover:bg-ochre transition-all duration-300"
                     >
                         View Catalogue

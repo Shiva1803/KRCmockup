@@ -34,12 +34,13 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/catalogue"
+                                <a
+                                    href="/samplecatalogue.pdf"
+                                    download
                                     className="text-sm text-navy/60 hover:text-ochre transition-colors duration-300 tracking-wide"
                                 >
                                     Catalogue
-                                </Link>
+                                </a>
                             </li>
                             <li>
                                 <a

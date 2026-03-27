@@ -8,7 +8,6 @@ import CategoryPage from './pages/CategoryPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import LegacyPage from './pages/LegacyPage'
 import ContactPage from './pages/ContactPage'
-import CataloguePage from './pages/CataloguePage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsConditionsPage from './pages/TermsConditionsPage'
 
@@ -33,7 +32,6 @@ function App() {
           <Route path="/products/:category/:productId" element={<ProductDetailPage />} />
           <Route path="/legacy" element={<LegacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/catalogue" element={<CataloguePage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsConditionsPage />} />
         </Routes>
