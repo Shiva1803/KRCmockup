@@ -714,9 +714,9 @@ export const products: Product[] = [
     // Knitwear
     {
         id: 'poncho',
-        name: 'Poncho',
-        description: 'Soft and comfortable poncho with timeless design.',
-        price: '₹1575',
+        name: 'Triangle Shawl',
+        description: 'Soft and comfortable triangle shawl with timeless design.',
+        price: '₹1470',
         image: '/image 137 (25).png',
         category: 'knitwear',
     },
@@ -868,7 +868,7 @@ export const products: Product[] = [
         id: 'multi-floral-honey',
         name: 'Multi Floral Honey',
         description: 'Natural multi floral honey.',
-        price: '₹480',
+        price: '₹450',
         image: '/image 137 (28).png',
         category: 'farmbites',
         specs: {
@@ -879,7 +879,7 @@ export const products: Product[] = [
         id: 'lychee-floral-honey',
         name: 'Lychee Floral Honey',
         description: 'Sweet lychee floral honey.',
-        price: '₹485',
+        price: '₹465',
         image: '/image 137 (29).png',
         category: 'farmbites',
         specs: {
@@ -923,7 +923,7 @@ export const products: Product[] = [
         id: 'ajwain-floral-honey',
         name: 'Ajwain Floral Honey',
         description: 'Aromatic ajwain floral honey.',
-        price: '₹600',
+        price: '₹465',
         image: '/image 141 (1).png',
         category: 'farmbites',
         specs: {
@@ -982,7 +982,7 @@ export const products: Product[] = [
         id: 'plum-jam',
         name: 'Plum Jam',
         description: 'Sweet plum jam.',
-        price: '₹285',
+        price: '₹180',
         image: '/image 137 (50).png',
         category: 'farmbites',
         specs: {
@@ -1094,7 +1094,7 @@ export const products: Product[] = [
         id: 'tulsi-rhododendron-tea',
         name: 'Tulsi Rhododendron Tea',
         description: 'Herbal tulsi rhododendron tea.',
-        price: '₹200',
+        price: '₹165',
         image: '/image 141 (2).png',
         category: 'farmbites',
         specs: {
@@ -1149,7 +1149,7 @@ export const products: Product[] = [
         id: 'himalayan-tulsi-herbal-tea',
         name: 'Himalayan Tulsi Herbal Tea',
         description: 'Pure tulsi herbal tea.',
-        price: '₹200',
+        price: '₹160',
         image: '/image 141 (3).png',
         category: 'farmbites',
         specs: {
@@ -1206,7 +1206,7 @@ export const products: Product[] = [
         id: 'rajma',
         name: 'Rajma',
         description: 'Premium quality rajma.',
-        price: '₹300',
+        price: '₹280',
         image: '/image 137 (33).png',
         category: 'farmbites',
         specs: {
@@ -1239,7 +1239,7 @@ export const products: Product[] = [
         id: 'himalayan-brown-rice',
         name: 'Himalayan Brown Rice',
         description: 'Wholesome brown rice.',
-        price: '₹190',
+        price: '₹110',
         image: '/image 137 (36).png',
         category: 'farmbites',
         specs: {
@@ -1318,7 +1318,7 @@ export const products: Product[] = [
     // Tweed
     {
         id: 'tweed-cloth-4-5m-superfine',
-        name: 'Tweed Cloth 4.5 m(Superfine)',
+        name: 'Tweed Cloth 4.5 Mtr (Superfine)',
         description: 'Premium superfine tweed cloth, 4.5 meters.',
         price: '₹3620',
         image: '/image 138 (5).png',
@@ -1366,9 +1366,9 @@ export const products: Product[] = [
     },
     {
         id: 'tweed-kumaoni-check',
-        name: 'Tweed Kumaoni Check',
+        name: 'Tweed Kumaoni Check 2 Mtr',
         description: 'Traditional Kumaoni check pattern tweed.',
-        price: '₹1018',
+        price: '₹1096',
         image: '/image 139 (2).png',
         category: 'tweed',
     },
