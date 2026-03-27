@@ -509,7 +509,7 @@ export default function CategoryPage() {
                             </div>
 
                             {/* Explore Grains & Staples Section */}
-                            <div>
+                            <div className="mb-20">
                                 <div className="mb-16 inline-block">
                                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy">
                                         Explore Grains & Staples
@@ -519,6 +519,44 @@ export default function CategoryPage() {
 
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                                     {products.filter(p => p.specs?.Subcategory === 'grains').map((product, i) => (
+                                        <div
+                                            key={product.id}
+                                            className="fade-in group overflow-hidden flex flex-col"
+                                            style={{ transitionDelay: `${i * 80}ms` }}
+                                        >
+                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
+                                                <img
+                                                    src={product.image}
+                                                    alt={product.name}
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                />
+                                            </div>
+                                            <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
+                                                <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
+                                                    {product.name}
+                                                </h3>
+                                                <div className="mt-2">
+                                                    <span className="text-ivory font-semibold text-lg">
+                                                        {product.price}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Explore Beverages Section */}
+                            <div>
+                                <div className="mb-16 inline-block">
+                                    <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy">
+                                        Explore Beverages
+                                    </h2>
+                                    <div className="mt-4 h-0.5 bg-maroon w-full" />
+                                </div>
+
+                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                                    {products.filter(p => p.specs?.Subcategory === 'beverages').map((product, i) => (
                                         <div
                                             key={product.id}
                                             className="fade-in group overflow-hidden flex flex-col"

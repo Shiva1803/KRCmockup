@@ -29,21 +29,21 @@ export const categories: Category[] = [
         name: 'Knitwear',
         description: 'Soft yet enduring, each layer carries warmth, comfort, and the quiet strength woven through every thread.',
         image: '/knitwear.png',
-        productCount: 1,
+        productCount: 2,
     },
     {
         slug: 'shawls',
         name: 'Shawls & Wraps',
         description: 'A timeless expression of heritage, each drape embodies tradition, warmth, and the artistry of skilled hands.',
         image: '/shawls.png',
-        productCount: 7,
+        productCount: 8,
     },
     {
         slug: 'accessories',
         name: 'Accessories',
         description: 'Small essentials with lasting purpose, designed to bring warmth, function, and refined simplicity to everyday wear.',
         image: '/accessories.png',
-        productCount: 4,
+        productCount: 5,
     },
     {
         slug: 'tweed',
@@ -64,7 +64,7 @@ export const categories: Category[] = [
         name: 'Farm Bites',
         description: 'Harvested from pristine Himalayan lands, delivering pure flavours, natural goodness, and timeless authenticity.',
         image: '/farmbites.png',
-        productCount: 4,
+        productCount: 52,
     },
 ]
 
@@ -266,6 +266,20 @@ export const products: Product[] = [
             Care: 'Hand Wash Cold',
         },
     },
+    {
+        id: 'triangular-shawl',
+        name: 'Triangular Shawl',
+        description: 'Elegant triangular shawl with unique design.',
+        price: '₹2400',
+        image: '/image 137 (53).png',
+        category: 'shawls',
+        specs: {
+            Material: 'Pure Wool',
+            Dimensions: '180 cm × 60 cm',
+            Weight: '220g',
+            Care: 'Hand Wash Cold',
+        },
+    },
 
     // Stoles
     {
@@ -462,6 +476,20 @@ export const products: Product[] = [
         description: 'Classic woollen muffler with traditional patterns, perfect for everyday warmth and style.',
         price: '₹1500',
         image: '/muffler.png',
+        category: 'accessories',
+        specs: {
+            Material: 'Pure Wool',
+            Dimensions: '150 cm × 30 cm',
+            Weight: '120g',
+            Care: 'Hand Wash Cold',
+        },
+    },
+    {
+        id: 'muffler-new',
+        name: 'Muffler',
+        description: 'Classic woollen muffler with traditional patterns.',
+        price: '₹1050',
+        image: '/image 143.png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -692,6 +720,14 @@ export const products: Product[] = [
         image: '/image 137 (25).png',
         category: 'knitwear',
     },
+    {
+        id: 'ladies-cardigan',
+        name: 'Ladies Cardigan',
+        description: 'Elegant ladies cardigan with premium knit.',
+        price: '₹2200',
+        image: '/image 137 (52).png',
+        category: 'knitwear',
+    },
 
     // Farm Bites - Oils
     {
@@ -699,7 +735,7 @@ export const products: Product[] = [
         name: 'Black Mustard Oil',
         description: 'Pure black mustard oil.',
         price: '₹380',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (54).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -710,7 +746,7 @@ export const products: Product[] = [
         name: 'Hemp Seed Oil',
         description: 'Natural hemp seed oil.',
         price: '₹380',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (55).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -721,7 +757,7 @@ export const products: Product[] = [
         name: 'Yellow Mustard Oil',
         description: 'Pure yellow mustard oil.',
         price: '₹380',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (56).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -732,7 +768,7 @@ export const products: Product[] = [
         name: 'Flax Seed Oil',
         description: 'Nutritious flax seed oil.',
         price: '₹140',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (57).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -743,7 +779,7 @@ export const products: Product[] = [
         name: 'Sesame Oil',
         description: 'Pure sesame oil.',
         price: '₹585',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (58).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -754,7 +790,7 @@ export const products: Product[] = [
         name: 'Mango Almond Oil',
         description: 'Exotic mango almond oil.',
         price: '₹250',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (59).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -765,7 +801,7 @@ export const products: Product[] = [
         name: 'Sunflower Oil',
         description: 'Pure sunflower oil.',
         price: '₹485',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (60).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -776,7 +812,7 @@ export const products: Product[] = [
         name: 'Groundnut Oil',
         description: 'Natural groundnut oil.',
         price: '₹440',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (61).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -787,7 +823,7 @@ export const products: Product[] = [
         name: 'Coconut Oil',
         description: 'Pure coconut oil.',
         price: '₹478',
-        image: '/placeholder-oil.png',
+        image: '/image 137 (62).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -798,7 +834,7 @@ export const products: Product[] = [
         name: 'Castor Seed Oil',
         description: 'Natural castor seed oil.',
         price: '₹140',
-        image: '/placeholder-oil.png',
+        image: '/image 141 (13).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -809,7 +845,18 @@ export const products: Product[] = [
         name: 'Bitter Apricot Oil',
         description: 'Premium bitter apricot oil.',
         price: '₹250',
-        image: '/placeholder-oil.png',
+        image: '/image 141 (14).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'oils',
+        },
+    },
+    {
+        id: 'apricot-oil',
+        name: 'Apricot Oil',
+        description: 'Pure apricot oil.',
+        price: '₹630',
+        image: '/image 141 (10).png',
         category: 'farmbites',
         specs: {
             Subcategory: 'oils',
@@ -1241,6 +1288,30 @@ export const products: Product[] = [
         category: 'farmbites',
         specs: {
             Subcategory: 'grains',
+        },
+    },
+
+    // Farm Bites - Beverages
+    {
+        id: 'apricot-cooler',
+        name: 'Apricot Cooler',
+        description: 'Refreshing apricot cooler.',
+        price: '₹330',
+        image: '/image 141 (11).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'beverages',
+        },
+    },
+    {
+        id: 'buransh-cooler',
+        name: 'Buransh Cooler',
+        description: 'Traditional buransh cooler.',
+        price: '₹300',
+        image: '/image 141 (12).png',
+        category: 'farmbites',
+        specs: {
+            Subcategory: 'beverages',
         },
     },
 
