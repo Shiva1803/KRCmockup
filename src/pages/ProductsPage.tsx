@@ -23,7 +23,7 @@ export default function ProductsPage() {
                         subtitle="Explore our range of premium woollen products, each crafted with meticulous care and tradition."
                     />
 
-                    <div className="grid grid-cols-2 gap-3 md:gap-8 mt-12">
+                    <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-8 mt-12 md:max-w-5xl md:mx-auto">
                         {categories.map((cat, i) => (
                             <Link
                                 key={cat.slug}
@@ -31,27 +31,43 @@ export default function ProductsPage() {
                                 className="fade-in group relative overflow-hidden bg-navy"
                                 style={{ 
                                     transitionDelay: `${i * 100}ms`,
-                                    aspectRatio: '174 / 121'
                                 }}
                             >
-                                <img
-                                    src={cat.image}
-                                    alt={cat.name}
-                                    className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
-                                />
-                                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8">
-                                    <span className="text-gold text-[8px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase">
-                                        {cat.productCount} Products
-                                    </span>
-                                    <h3 className="mt-1 md:mt-2 font-heading text-[14px] md:text-2xl lg:text-3xl font-bold text-ivory group-hover:text-gold transition-colors duration-300">
-                                        {cat.name}
-                                    </h3>
-                                    <p className="mt-1 md:mt-2 text-ivory/60 text-[8px] md:text-sm line-clamp-2">
-                                        {cat.description}
-                                    </p>
-                                    <span className="mt-2 md:mt-4 inline-block text-gold text-[8px] md:text-sm tracking-wider md:tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-300">
-                                        Explore →
-                                    </span>
+                                <div className="md:hidden" style={{ aspectRatio: '173.74 / 120.82' }}>
+                                    <img
+                                        src={cat.image}
+                                        alt={cat.name}
+                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
+                                    />
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-2">
+                                        <span className="text-gold text-[8px] tracking-[0.15em] uppercase font-light">
+                                            {cat.productCount} Products
+                                        </span>
+                                        <h3 className="mt-1 font-heading text-[19px] leading-tight font-bold text-ivory group-hover:text-gold transition-colors duration-300">
+                                            {cat.name}
+                                        </h3>
+                                        <span className="mt-1 inline-block text-gold text-[9px] tracking-wider uppercase transition-colors duration-300">
+                                            EXPLORE
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="hidden md:block" style={{ aspectRatio: '612.16 / 425.7' }}>
+                                    <img
+                                        src={cat.image}
+                                        alt={cat.name}
+                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
+                                    />
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                                        <span className="text-gold text-xl tracking-[0.2em] uppercase font-light">
+                                            {cat.productCount} Products
+                                        </span>
+                                        <h3 className="mt-3 font-heading text-[56px] leading-tight font-bold text-ivory group-hover:text-gold transition-colors duration-300">
+                                            {cat.name}
+                                        </h3>
+                                        <span className="mt-4 inline-block text-gold text-[22px] tracking-wider uppercase transition-colors duration-300">
+                                            EXPLORE
+                                        </span>
+                                    </div>
                                 </div>
                             </Link>
                         ))}
