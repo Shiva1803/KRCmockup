@@ -35,7 +35,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="/samplecatalogue.pdf"
+                                    href="/KRC_Catalogue.pdf"
                                     download
                                     className="text-sm text-navy/60 hover:text-ochre transition-colors duration-300 tracking-wide"
                                 >

@@ -94,7 +94,7 @@ export default function HomePage() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
-                            { number: '500+', label: 'Veer Nari Employed' },
+                            { number: '500+', label: 'Veer Naris Employed' },
                             { number: '10,000+', label: 'Products Crafted' },
                             { number: '100%', label: 'Pure Wool' },
                             { number: '50+', label: 'Years of Heritage' },
@@ -140,7 +140,7 @@ export default function HomePage() {
                                 {
                                     title: 'Download Catalogue',
                                     desc: 'View our complete product range with specifications.',
-                                    link: '/samplecatalogue.pdf',
+                                    link: '/KRC_Catalogue.pdf',
                                     icon: '→',
                                     bg: '/catalogue-bg.webp',
                                     download: true,

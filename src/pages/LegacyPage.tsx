@@ -28,7 +28,7 @@ export default function LegacyPage() {
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-gold" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
-                                The Kumaon Regiment of the Indian Army carries a legacy shaped in the highlands of the Himalayas. Across generations, Our soldiers have stood watch over the nation's most formidable frontiers with quiet resolve and unyielding courage. Through generations of duty, their valour has been honoured with the nation's highest gallantry distinctions, including Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. Yet beyond the battlefield lies a silent pillar of strength, the families whose resilience and grace echo the same spirit that guards the nation.
+                                The Kumaon Regiment of the Indian Army carries a legacy shaped in the highlands of the Himalayas. Across generations, our soldiers have stood watch over the nation's most formidable frontiers with quiet resolve and unyielding courage. Through generations of duty, their valour has been honoured with the nation's highest gallantry distinctions, including Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. Yet beyond the battlefield lies a silent pillar of strength, the families whose resilience and grace echo the same spirit that guards the nation.
                             </p>
                         </div>
                         <div className="fade-in">
@@ -172,7 +172,7 @@ export default function LegacyPage() {
                         Every purchase supports the Veer Nari mission. Explore our collection and wear a story of courage.
                     </p>
                     <a
-                        href="/samplecatalogue.pdf"
+                        href="/KRC_Catalogue.pdf"
                         download
                         className="fade-in inline-block mt-8 px-8 py-3.5 bg-gold text-navy font-semibold text-sm tracking-widest uppercase hover:bg-ochre transition-all duration-300"
                     >
