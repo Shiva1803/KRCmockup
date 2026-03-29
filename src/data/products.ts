@@ -1420,7 +1420,7 @@ export const products: Product[] = [
         id: 'tweed-cloth-superfine-4-5-mtr',
         name: 'Tweed Cloth Superfine 4.5 Mtr',
         description: 'Premium superfine tweed cloth, 4.5 meters.',
-        price: '₹1918',
+        price: '₹3520',
         image: '/image 139 (3).png',
         category: 'tweed',
     },
