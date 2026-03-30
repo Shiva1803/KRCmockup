@@ -20,13 +20,13 @@ export default function LegacyPage() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div className="fade-in">
-                            <span className="text-ochre text-xs tracking-[0.3em] uppercase font-semibold">
+                            <span className="text-ochre text-sm tracking-[0.3em] uppercase font-semibold">
                                 Chapter I
                             </span>
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">
                                 The Regiment Story
                             </h2>
-                            <div className="mt-4 w-16 h-0.5 bg-gold" />
+                            <div className="mt-4 w-16 h-0.5 bg-[#8A2128]" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
                                 The Kumaon Regiment of the Indian Army carries a legacy shaped in the highlands of the Himalayas. Across generations, our soldiers have stood watch over the nation's most formidable frontiers with quiet resolve and unyielding courage. Through generations of duty, their valour has been honoured with the nation's highest gallantry distinctions, including Param Vir Chakras, Maha Vir Chakras, and Vir Chakras. Yet beyond the battlefield lies a silent pillar of strength, the families whose resilience and grace echo the same spirit that guards the nation.
                             </p>
@@ -76,7 +76,7 @@ export default function LegacyPage() {
                             </div>
                         </div>
                         <div className="fade-in order-1 lg:order-2">
-                            <span className="text-ochre text-xs tracking-[0.3em] uppercase font-semibold">
+                            <span className="text-ochre text-sm tracking-[0.3em] uppercase font-semibold">
                                 Chapter II
                             </span>
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">
@@ -84,7 +84,7 @@ export default function LegacyPage() {
                                 <br />
                                 <span className="text-maroon">Contribution</span>
                             </h2>
-                            <div className="mt-4 w-16 h-0.5 bg-gold" />
+                            <div className="mt-4 w-16 h-0.5 bg-[#8A2128]" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
                                 At the heart of KRC Woollens lies the Veer Nari programme, an initiative rooted in dignity, purpose, and quiet resilience. Within the hills of Kumaon, a community of women connected to the legacy of fallen soldiers carry forward a different kind of service: one that rebuilds strength through craft and self-reliance.
                             </p>

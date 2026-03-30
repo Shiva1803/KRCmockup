@@ -118,7 +118,7 @@ export default function ContactPage() {
                             href="mailto:info@krcwoollens.com"
                             className="mt-4 inline-block font-heading text-xl text-gold hover:text-ochre transition-colors duration-300"
                         >
-                            info@krcwoollens.com
+                            krcwoollens@gmail.com
                         </a>
                         <p className="mt-2 text-ivory/50 text-sm">
                             For detailed inquiries, quotations, and partnership opportunities.

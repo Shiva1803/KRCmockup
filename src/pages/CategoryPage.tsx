@@ -156,7 +156,7 @@ export default function CategoryPage() {
                         <div className="max-w-7xl mx-auto px-6">
                             <div className="mb-16 inline-block">
                                 <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy">
-                                    Explore Soaps
+                                    Explore Soaps and Scrubs
                                 </h2>
                                 <div className="mt-4 h-0.5 bg-maroon w-full" />
                             </div>

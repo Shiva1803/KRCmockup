@@ -71,7 +71,7 @@ export default function HomePage() {
                                 <br />
                                 <span className="text-maroon">Veer Nari</span>
                             </h2>
-                            <div className="mt-4 w-16 h-0.5 bg-gold" />
+                            <div className="mt-4 w-16 h-0.5 bg-[#8A2128]" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
                                 KRC Woollens was born from a mission greater than commerce. We provide dignified employment to the wives and mothers of our martyred soldiers. The Veer Naris, transforming their skilled hands into artisans of premium woollen craft.
                             </p>
