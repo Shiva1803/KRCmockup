@@ -20,7 +20,7 @@ export default function LegacyPage() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div className="fade-in">
-                            <span className="text-ochre text-sm tracking-[0.3em] uppercase font-semibold">
+                            <span className="text-amber-700 text-sm tracking-[0.3em] uppercase font-semibold">
                                 Chapter I
                             </span>
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">
@@ -76,7 +76,7 @@ export default function LegacyPage() {
                             </div>
                         </div>
                         <div className="fade-in order-1 lg:order-2">
-                            <span className="text-ochre text-sm tracking-[0.3em] uppercase font-semibold">
+                            <span className="text-amber-700 text-sm tracking-[0.3em] uppercase font-semibold">
                                 Chapter II
                             </span>
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">

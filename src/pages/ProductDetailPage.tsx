@@ -36,7 +36,7 @@ export default function ProductDetailPage() {
                         <Link to={`/products/${category}`} className="text-navy/50 hover:text-gold transition-colors">
                             {cat.name}
                         </Link>
-                        <span className="text-navy/30">/</span>
+                        <span className="text-navy/30"></span>
                         <span className="text-navy font-medium">{product.name}</span>
                     </nav>
                 </div>
