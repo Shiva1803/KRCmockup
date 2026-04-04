@@ -24,10 +24,10 @@ export default function HomePage() {
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                 {/* Content */}
                 <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
-                    <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ivory leading-tight tracking-wide">
+                    <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-ivory leading-tight tracking-wide">
                         Woven with Honour
                     </h1>
-                    <p className="mt-6 text-ivory/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
+                    <p className="mt-6 text-ivory/70 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light tracking-wide">
                         Premium handcrafted woollens by the brave women of India's martyred soldiers, where every thread tells a story of courage, sacrifice, and resilience.
                     </p>
                     <div className="mt-10">
@@ -57,13 +57,13 @@ export default function HomePage() {
                                     />
                                 </div>
                                 {/* Decorative border */}
-                                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/30 -z-10" />
+                                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-amber-700/60 -z-10" />
                             </div>
                         </div>
 
                         {/* Content */}
                         <div className="fade-in order-1 lg:order-2">
-                            <span className="text-ochre text-sm font-semibold tracking-[0.3em] uppercase">
+                            <span className="text-amber-700 text-sm font-semibold tracking-[0.3em] uppercase">
                                 Our Purpose
                             </span>
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">
@@ -94,9 +94,9 @@ export default function HomePage() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
-                            { number: '500+', label: 'Veer Naris Employed' },
-                            { number: '10,000+', label: 'Products Crafted' },
-                            { number: '100%', label: 'Pure Wool' },
+                            { number: '500+', label: 'Veer Naris, Ex-Service Men & Dependants Employed' },
+                            { number: '5,000+', label: 'Products Crafted' },
+                            { number: '100%', label: 'Pure Merino Wool' },
                             { number: '50+', label: 'Years of Heritage' },
                         ].map((stat, i) => (
                             <div key={i} className="fade-in">

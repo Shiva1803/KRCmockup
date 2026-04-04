@@ -573,7 +573,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹315',
-        image: '/placeholder.png',
+        image: '/image 143 (2).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -585,7 +585,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹315',
-        image: '/placeholder.png',
+        image: '/image 143 (3).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -597,7 +597,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹315',
-        image: '/placeholder.png',
+        image: '/image 143 (4).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -609,7 +609,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹420',
-        image: '/placeholder.png',
+        image: '/image 143 (5).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -621,7 +621,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹420',
-        image: '/placeholder.png',
+        image: '/image 143 (6).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -633,7 +633,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹420',
-        image: '/placeholder.png',
+        image: '/image 143 (7).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',
@@ -645,7 +645,7 @@ export const products: Product[] = [
         name: 'Woollen Cap',
         description: 'Cozy woollen cap for winter warmth.',
         price: '₹420',
-        image: '/placeholder.png',
+        image: '/image 143 (8).png',
         category: 'accessories',
         specs: {
             Material: 'Pure Wool',

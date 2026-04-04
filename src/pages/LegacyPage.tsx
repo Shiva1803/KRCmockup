@@ -95,9 +95,9 @@ export default function LegacyPage() {
                             {/* Impact Numbers */}
                             <div className="mt-10 grid grid-cols-2 gap-6">
                                 {[
-                                    { num: '500+', label: 'Veer Naris Employed' },
-                                    { num: '10,000+', label: 'Products Crafted' },
-                                    { num: '100%', label: 'Pure Wool' },
+                                    { num: '500+', label: 'Veer Naris, Ex-Service Men & Dependants Employed' },
+                                    { num: '5,000+', label: 'Products Crafted' },
+                                    { num: '100%', label: 'Pure Merino Wool' },
                                     { num: '50+', label: 'Years of Heritage' },
                                 ].map((item) => (
                                     <div key={item.label} className="border-l-2 border-gold pl-4">
