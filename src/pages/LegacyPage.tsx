@@ -130,7 +130,11 @@ export default function LegacyPage() {
                             {
                                 year: 'The Beginning',
                                 title: 'A Mission of Honour',
-                                desc: 'KRC Woollens was founded in 1977 under the Kumaon Regimental Centre to create dignity and opportunity for the families of fallen soldiers, and was inaugurated by General T. N. Raina, then Chief of Army Staff.',
+                                desc: (
+                                    <>
+                                        KRC Woollens was founded in 1977 under the Kumaon Regimental Centre to provide dignity and opportunity through structured weaving training initiatives. The project was inaugurated by <strong className="font-semibold text-navy">Gen T. N. Raina, Padma Bhushan, MVC, then COAS.</strong>
+                                    </>
+                                ),
                             },
                             {
                                 year: 'The Craft',

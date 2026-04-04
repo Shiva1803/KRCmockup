@@ -19,6 +19,7 @@ export function useFadeIn() {
         if (el) {
             const children = el.querySelectorAll('.fade-in')
             children.forEach((child) => observer.observe(child))
+
             return () => {
                 children.forEach((child) => observer.unobserve(child))
             }
