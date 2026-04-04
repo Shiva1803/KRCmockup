@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import HoverZoomImage from '../components/HoverZoomImage'
 import HeroSection from '../components/HeroSection'
 import SectionHeading from '../components/SectionHeading'
 import { getCategoryBySlug, getProductsByCategory } from '../data/products'
@@ -64,13 +65,12 @@ export default function CategoryPage() {
                                         className="fade-in group overflow-hidden flex flex-col"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="overflow-hidden"
+                                            style={{ aspectRatio: '328 / 262.93' }}
+                                        />
                                         <div className="bg-gradient-to-r from-[#191A2F] to-[#8A2128] p-5 md:p-6 flex-1 flex flex-col">
                                             <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                 {product.name}
@@ -116,13 +116,12 @@ export default function CategoryPage() {
                                         className="fade-in group overflow-hidden flex flex-col"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="overflow-hidden"
+                                            style={{ aspectRatio: '328 / 262.93' }}
+                                        />
                                         <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                             <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                 {product.name}
@@ -168,13 +167,12 @@ export default function CategoryPage() {
                                         className="fade-in group overflow-hidden flex flex-col"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="overflow-hidden"
+                                            style={{ aspectRatio: '328 / 262.93' }}
+                                        />
                                         <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                             <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                 {product.name}
@@ -220,13 +218,12 @@ export default function CategoryPage() {
                                         className="fade-in group overflow-hidden flex flex-col"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="overflow-hidden"
+                                            style={{ aspectRatio: '328 / 262.93' }}
+                                        />
                                         <div className="bg-gradient-to-r from-[#191A2F] to-[#8A2128] p-5 md:p-6 flex-1 flex flex-col">
                                             <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                 {product.name}
@@ -272,13 +269,12 @@ export default function CategoryPage() {
                                         className="fade-in group overflow-hidden flex flex-col"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="overflow-hidden"
+                                            style={{ aspectRatio: '328 / 262.93' }}
+                                        />
                                         <div className="bg-gradient-to-r from-[#191A2F] to-[#DBAD4F] p-5 md:p-6 flex-1 flex flex-col">
                                             <div className="min-h-[3.5rem] flex items-center overflow-hidden">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory whitespace-nowrap">
@@ -334,13 +330,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -372,13 +367,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -410,13 +404,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -448,13 +441,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -486,13 +478,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -524,13 +515,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -562,13 +552,12 @@ export default function CategoryPage() {
                                             className="fade-in group overflow-hidden flex flex-col"
                                             style={{ transitionDelay: `${i * 80}ms` }}
                                         >
-                                            <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                />
-                                            </div>
+                                            <HoverZoomImage
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="overflow-hidden"
+                                                style={{ aspectRatio: '328 / 262.93' }}
+                                            />
                                             <div className="bg-gradient-to-r from-[#191A2F] to-[#354818] p-5 md:p-6 flex-1 flex flex-col">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory min-h-[3.5rem] flex items-center">
                                                     {product.name}
@@ -615,13 +604,12 @@ export default function CategoryPage() {
                                         className="fade-in group overflow-hidden flex flex-col"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="overflow-hidden"
+                                            style={{ aspectRatio: '328 / 262.93' }}
+                                        />
                                         <div className="bg-gradient-to-r from-[#191A2F] to-[#DBAD4F] p-5 md:p-6 flex-1 flex flex-col">
                                             <div className="min-h-[3.5rem] flex items-center overflow-hidden">
                                                 <h3 className="font-heading text-lg md:text-xl font-bold text-ivory whitespace-nowrap">
@@ -687,13 +675,11 @@ export default function CategoryPage() {
                                         className="fade-in group bg-white border border-navy/5 overflow-hidden hover:shadow-xl hover:shadow-navy/5 transition-all duration-500"
                                         style={{ transitionDelay: `${i * 80}ms` }}
                                     >
-                                        <div className="aspect-square overflow-hidden">
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
+                                        <HoverZoomImage
+                                            src={product.image}
+                                            alt={product.name}
+                                            className="aspect-square"
+                                        />
                                         <div className="p-5 md:p-6">
                                             <h3 className="font-heading text-lg md:text-xl font-bold text-navy group-hover:text-maroon transition-colors duration-300">
                                                 {product.name}

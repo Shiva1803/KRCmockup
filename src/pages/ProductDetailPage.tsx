@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import HoverZoomImage from '../components/HoverZoomImage'
 import { getProductById, getCategoryBySlug } from '../data/products'
 import { useFadeIn } from '../hooks/useAnimations'
 
@@ -47,13 +48,13 @@ export default function ProductDetailPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                         {/* Image */}
                         <div className="fade-in">
-                            <div className="aspect-square overflow-hidden bg-white border border-navy/5">
-                                <img
-                                    src={product.image}
-                                    alt={product.name}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                                />
-                            </div>
+                            <HoverZoomImage
+                                src={product.image}
+                                alt={product.name}
+                                className="aspect-square bg-white border border-navy/5"
+                                zoomScale={1.65}
+                                loading="eager"
+                            />
                         </div>
 
                         {/* Info */}
