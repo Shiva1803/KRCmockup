@@ -79,6 +79,7 @@ export default function HoverZoomImage({
                 src={src}
                 alt={alt}
                 loading={loading}
+                decoding="async"
                 className={`h-full w-full transform-gpu object-cover transition-transform duration-300 ease-out will-change-transform ${imageClassName}`.trim()}
                 style={{
                     transformOrigin: 'var(--zoom-origin-x) var(--zoom-origin-y)',

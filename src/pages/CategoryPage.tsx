@@ -1,5 +1,4 @@
 import { Link, useParams } from 'react-router-dom'
-import HoverZoomImage from '../components/HoverZoomImage'
 import HeroSection from '../components/HeroSection'
 import SectionHeading from '../components/SectionHeading'
 import { type Product, getCategoryBySlug, getProductsByCategory } from '../data/products'
@@ -150,12 +149,15 @@ function FeaturedProductGrid({
                     className="fade-in group overflow-hidden flex flex-col"
                     style={{ transitionDelay: `${index * 60}ms` }}
                 >
-                    <HoverZoomImage
-                        src={product.image}
-                        alt={product.name}
-                        className="overflow-hidden"
-                        style={{ aspectRatio: '328 / 262.93' }}
-                    />
+                    <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
+                        <img
+                            src={product.image}
+                            alt={product.name}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                        />
+                    </div>
                     <div className={`${gradientClassName} p-5 md:p-6 flex-1 flex flex-col`}>
                         <ProductName product={product} marqueeTitles={marqueeTitles} />
                         <div className="mt-2">
@@ -186,11 +188,15 @@ function LinkedProductGrid({
                     className="fade-in group bg-white border border-navy/5 overflow-hidden hover:shadow-xl hover:shadow-navy/5 transition-all duration-500"
                     style={{ transitionDelay: `${index * 60}ms` }}
                 >
-                    <HoverZoomImage
-                        src={product.image}
-                        alt={product.name}
-                        className="aspect-square"
-                    />
+                    <div className="aspect-square overflow-hidden">
+                        <img
+                            src={product.image}
+                            alt={product.name}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                        />
+                    </div>
                     <div className="p-5 md:p-6">
                         <h3 className="font-heading text-lg md:text-xl font-bold text-navy group-hover:text-maroon transition-colors duration-300">
                             {product.name}
