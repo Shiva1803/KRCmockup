@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import HeroSection from '../components/HeroSection'
 import SectionHeading from '../components/SectionHeading'
-import { type Product, getCategoryBySlug, getProductsByCategory } from '../data/products'
+import { type Product, getCategoryBySlug, getCompressedProductImage, getProductsByCategory } from '../data/products'
 import { useFadeIn } from '../hooks/useAnimations'
 
 type FeaturedCategoryConfig = {
@@ -136,26 +137,45 @@ function FeaturedProductGrid({
     products,
     gradientClassName,
     marqueeTitles = false,
+    onProductClick,
 }: {
     products: Product[]
     gradientClassName: string
     marqueeTitles?: boolean
+    onProductClick?: (product: Product) => void
 }) {
     return (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 transition-all duration-300">
             {products.map((product, index) => (
                 <div
                     key={product.id}
-                    className="fade-in group overflow-hidden flex flex-col"
+                    className={`fade-in group overflow-hidden flex flex-col ${onProductClick ? 'cursor-zoom-in' : ''}`}
                     style={{ transitionDelay: `${index * 60}ms` }}
+                    role={onProductClick ? 'button' : undefined}
+                    tabIndex={onProductClick ? 0 : undefined}
+                    onClick={() => onProductClick?.(product)}
+                    onKeyDown={(event) => {
+                        if (!onProductClick) {
+                            return
+                        }
+
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault()
+                            onProductClick(product)
+                        }
+                    }}
                 >
                     <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
                         <img
-                            src={product.image}
+                            src={getCompressedProductImage(product.image)}
                             alt={product.name}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                            onError={(event) => {
+                                event.currentTarget.onerror = null
+                                event.currentTarget.src = product.image
+                            }}
                         />
                     </div>
                     <div className={`${gradientClassName} p-5 md:p-6 flex-1 flex flex-col`}>
@@ -174,27 +194,39 @@ function FeaturedProductGrid({
 
 function LinkedProductGrid({
     products,
-    categorySlug,
+    onProductClick,
 }: {
     products: Product[]
-    categorySlug: string
+    onProductClick: (product: Product) => void
 }) {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 transition-all duration-300">
             {products.map((product, index) => (
-                <Link
+                <article
                     key={product.id}
-                    to={`/products/${categorySlug}/${product.id}`}
-                    className="fade-in group bg-white border border-navy/5 overflow-hidden hover:shadow-xl hover:shadow-navy/5 transition-all duration-500"
+                    className="fade-in group bg-white border border-navy/5 overflow-hidden hover:shadow-xl hover:shadow-navy/5 transition-all duration-500 cursor-zoom-in"
                     style={{ transitionDelay: `${index * 60}ms` }}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => onProductClick(product)}
+                    onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault()
+                            onProductClick(product)
+                        }
+                    }}
                 >
                     <div className="aspect-square overflow-hidden">
                         <img
-                            src={product.image}
+                            src={getCompressedProductImage(product.image)}
                             alt={product.name}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                            onError={(event) => {
+                                event.currentTarget.onerror = null
+                                event.currentTarget.src = product.image
+                            }}
                         />
                     </div>
                     <div className="p-5 md:p-6">
@@ -208,12 +240,12 @@ function LinkedProductGrid({
                             <span className="text-ochre font-semibold text-lg font-heading">
                                 {product.price}
                             </span>
-                            <span className="text-gold text-xs tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-300">
-                                View →
+                            <span className="text-gold text-xs tracking-widest uppercase">
+                                Tap to Preview
                             </span>
                         </div>
                     </div>
-                </Link>
+                </article>
             ))}
         </div>
     )
@@ -222,10 +254,32 @@ function LinkedProductGrid({
 export default function CategoryPage() {
     const { category } = useParams<{ category: string }>()
     const fadeRef = useFadeIn()
+    const [previewProduct, setPreviewProduct] = useState<Product | null>(null)
 
     const categorySlug = category || ''
     const cat = getCategoryBySlug(categorySlug)
     const products = getProductsByCategory(categorySlug)
+
+    useEffect(() => {
+        if (!previewProduct) {
+            return
+        }
+
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setPreviewProduct(null)
+            }
+        }
+
+        const previousBodyOverflow = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+        window.addEventListener('keydown', handleEscape)
+
+        return () => {
+            document.body.style.overflow = previousBodyOverflow
+            window.removeEventListener('keydown', handleEscape)
+        }
+    }, [previewProduct])
 
     if (!cat) {
         return (
@@ -261,6 +315,7 @@ export default function CategoryPage() {
                                 products={products}
                                 gradientClassName={featuredCategory.gradientClassName}
                                 marqueeTitles={featuredCategory.marqueeTitles}
+                                onProductClick={setPreviewProduct}
                             />
                         </div>
                     </section>
@@ -286,6 +341,7 @@ export default function CategoryPage() {
                                         <FeaturedProductGrid
                                             products={sectionProducts}
                                             gradientClassName="bg-gradient-to-r from-[#191A2F] to-[#354818]"
+                                            onProductClick={setPreviewProduct}
                                         />
                                     </div>
                                 )
@@ -317,11 +373,49 @@ export default function CategoryPage() {
                             />
                             <LinkedProductGrid
                                 products={products}
-                                categorySlug={categorySlug}
+                                onProductClick={setPreviewProduct}
                             />
                         </div>
                     </section>
                 </>
+            )}
+
+            {previewProduct && (
+                <div
+                    className="fixed inset-0 z-[120] bg-navy/90 backdrop-blur-sm p-4 md:p-8 flex items-center justify-center"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={`${previewProduct.name} full resolution image`}
+                    onClick={() => setPreviewProduct(null)}
+                >
+                    <div
+                        className="relative max-w-[96vw] max-h-[92vh]"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            onClick={() => setPreviewProduct(null)}
+                            className="absolute -top-12 right-0 text-ivory/80 hover:text-ivory text-xs md:text-sm tracking-[0.2em] uppercase border border-ivory/40 px-3 py-1.5 bg-navy/60"
+                        >
+                            Close
+                        </button>
+                        <img
+                            src={previewProduct.image}
+                            alt={previewProduct.name}
+                            className="max-w-[96vw] max-h-[92vh] object-contain bg-ivory/5 border border-ivory/20"
+                            loading="eager"
+                            decoding="async"
+                        />
+                        <div className="mt-4 text-center">
+                            <span
+                                className="inline-flex items-center justify-center px-5 py-2.5 bg-gold text-navy text-xs md:text-sm font-semibold tracking-[0.18em] uppercase max-w-[90vw] md:max-w-[70vw] whitespace-nowrap overflow-hidden text-ellipsis"
+                                title={previewProduct.name}
+                            >
+                                {previewProduct.name}
+                            </span>
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     )
