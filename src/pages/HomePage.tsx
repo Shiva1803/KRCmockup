@@ -12,12 +12,16 @@ export default function HomePage() {
                 {/* Video Background */}
                 <video
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
-                    src="/headervideoforhome-compressed.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
-                />
+                    preload="metadata"
+                    poster="/kumaonhills.webp"
+                >
+                    <source src="/headervideoforhome-960.webm" type="video/webm" />
+                    <source src="/headervideoforhome-960.mp4" type="video/mp4" />
+                </video>
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-navy/70" />
                 {/* Decorative bottom line */}
