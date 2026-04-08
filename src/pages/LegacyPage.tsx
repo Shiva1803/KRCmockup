@@ -89,7 +89,7 @@ export default function LegacyPage() {
                                 At the heart of KRC Woollens lies the Veer Nari programme, an initiative rooted in dignity, purpose, and quiet resilience. Within the hills of Kumaon, a community of women connected to the legacy of fallen soldiers carry forward a different kind of service: one that rebuilds strength through craft and self-reliance.
                             </p>
                             <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed text-justify">
-                                Here, raw wool is patiently transformed by skilled hands into finely woven shawls, stoles, blankets, and mufflers. Each thread carries a story - of endurance, of quiet courage, and of lives that continue to stand strong in the face of sacrifice. What emerges is more than a textile; it is a living expression of resilience, shaped by hands that honour a legacy.
+                                Here, raw wool is transformed by skilled hands into finely woven shawls, stoles, blankets, and mufflers. Each Kumaoni shawl is handwoven by Veer Naris and dependents of veterans of the Kumaon Regiment, shaped through dedication and skill. With over 40 years of experience, these artisans create products of exceptional quality, where every thread carries a story of quiet courage and resilience. What emerges is more than a textile; it is a living expression of a legacy honoured through craft.
                             </p>
 
                             {/* Impact Numbers */}
@@ -144,7 +144,7 @@ export default function LegacyPage() {
                             {
                                 year: 'The Future',
                                 title: 'Growing the Legacy',
-                                desc: 'Today KRC Woollens continues to grow its reach, supporting more Veer Naris while bringing the Warmth of our Woollens to audiences across India and beyond.',
+                                desc: 'Today KRC Woollens continues to grow its reach, supporting more Veer Naris and Dependents of Soldiers, while bringing the Warmth of our Woollens to audiences across India and beyond.',
                             },
                         ].map((item, i) => (
                             <div
