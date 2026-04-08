@@ -255,6 +255,7 @@ export default function CategoryPage() {
     const { category } = useParams<{ category: string }>()
     const fadeRef = useFadeIn()
     const [previewProduct, setPreviewProduct] = useState<Product | null>(null)
+    const [isPreviewImageLoading, setIsPreviewImageLoading] = useState(false)
 
     const categorySlug = category || ''
     const cat = getCategoryBySlug(categorySlug)
@@ -278,6 +279,14 @@ export default function CategoryPage() {
         return () => {
             document.body.style.overflow = previousBodyOverflow
             window.removeEventListener('keydown', handleEscape)
+        }
+    }, [previewProduct])
+
+    useEffect(() => {
+        if (previewProduct) {
+            setIsPreviewImageLoading(true)
+        } else {
+            setIsPreviewImageLoading(false)
         }
     }, [previewProduct])
 
@@ -399,13 +408,25 @@ export default function CategoryPage() {
                         >
                             Close
                         </button>
-                        <img
-                            src={previewProduct.image}
-                            alt={previewProduct.name}
-                            className="max-w-[96vw] max-h-[92vh] object-contain bg-ivory/5 border border-ivory/20"
-                            loading="eager"
-                            decoding="async"
-                        />
+                        <div className="relative">
+                            {isPreviewImageLoading ? (
+                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy/70 z-10">
+                                    <span className="h-10 w-10 rounded-full border-2 border-ivory/30 border-t-gold animate-spin" />
+                                    <span className="mt-3 text-ivory/75 text-xs md:text-sm tracking-[0.12em] uppercase">
+                                        Loading Image
+                                    </span>
+                                </div>
+                            ) : null}
+                            <img
+                                src={previewProduct.image}
+                                alt={previewProduct.name}
+                                className={`max-w-[96vw] max-h-[92vh] object-contain bg-ivory/5 border border-ivory/20 transition-opacity duration-300 ${isPreviewImageLoading ? 'opacity-0' : 'opacity-100'}`}
+                                loading="eager"
+                                decoding="async"
+                                onLoad={() => setIsPreviewImageLoading(false)}
+                                onError={() => setIsPreviewImageLoading(false)}
+                            />
+                        </div>
                         <div className="mt-4 text-center">
                             <span
                                 className="inline-flex items-center justify-center px-5 py-2.5 bg-gold text-navy text-xs md:text-sm font-semibold tracking-[0.18em] uppercase max-w-[90vw] md:max-w-[70vw] whitespace-nowrap overflow-hidden text-ellipsis"
