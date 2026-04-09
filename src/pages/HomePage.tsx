@@ -54,7 +54,7 @@ export default function HomePage() {
                             <div className="relative">
                                 <div className="aspect-[4/5] bg-navy/10 overflow-hidden">
                                     <img
-                                        src="/veernari.webp"
+                                        src="/veernari-home.jpeg"
                                         alt="Veer Nari artisan"
                                         loading="lazy"
                                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -73,7 +73,7 @@ export default function HomePage() {
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">
                                 Empowering the
                                 <br />
-                                <span className="text-maroon">Veer Nari</span>
+                                <span className="text-maroon">Veer Naris</span>
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-[#8A2128]" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
