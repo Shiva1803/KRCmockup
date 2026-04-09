@@ -437,9 +437,9 @@ export default function CategoryPage() {
                         <div className="relative min-h-[220px] md:min-h-[320px] flex items-center justify-center">
                             {isPreviewImageLoading ? (
                                 <div className="flex flex-col items-center justify-center">
-                                    <span className="h-10 w-10 rounded-full border-2 border-ivory/30 border-t-gold animate-spin" />
-                                    <span className="mt-3 text-ivory/75 text-xs md:text-sm tracking-[0.12em] uppercase">
-                                        Loading Image
+                                    <span className="relative h-10 w-10">
+                                        <span className="absolute inset-0 rounded-full border-2 border-ivory/35" />
+                                        <span className="absolute inset-0 rounded-full border-2 border-transparent border-t-gold animate-spin" />
                                     </span>
                                 </div>
                             ) : isPreviewImageError ? (
