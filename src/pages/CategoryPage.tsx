@@ -256,6 +256,7 @@ export default function CategoryPage() {
     const fadeRef = useFadeIn()
     const [previewProduct, setPreviewProduct] = useState<Product | null>(null)
     const [isPreviewImageLoading, setIsPreviewImageLoading] = useState(false)
+    const [isPreviewImageError, setIsPreviewImageError] = useState(false)
 
     const categorySlug = category || ''
     const cat = getCategoryBySlug(categorySlug)
@@ -283,10 +284,35 @@ export default function CategoryPage() {
     }, [previewProduct])
 
     useEffect(() => {
-        if (previewProduct) {
-            setIsPreviewImageLoading(true)
-        } else {
+        if (!previewProduct) {
             setIsPreviewImageLoading(false)
+            setIsPreviewImageError(false)
+            return
+        }
+
+        let isCancelled = false
+        const preloadImage = new Image()
+
+        setIsPreviewImageLoading(true)
+        setIsPreviewImageError(false)
+
+        preloadImage.onload = () => {
+            if (!isCancelled) {
+                setIsPreviewImageLoading(false)
+            }
+        }
+
+        preloadImage.onerror = () => {
+            if (!isCancelled) {
+                setIsPreviewImageLoading(false)
+                setIsPreviewImageError(true)
+            }
+        }
+
+        preloadImage.src = previewProduct.image
+
+        return () => {
+            isCancelled = true
         }
     }, [previewProduct])
 
@@ -408,24 +434,29 @@ export default function CategoryPage() {
                         >
                             Close
                         </button>
-                        <div className="relative">
+                        <div className="relative min-h-[220px] md:min-h-[320px] flex items-center justify-center">
                             {isPreviewImageLoading ? (
-                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy/70 z-10">
+                                <div className="flex flex-col items-center justify-center">
                                     <span className="h-10 w-10 rounded-full border-2 border-ivory/30 border-t-gold animate-spin" />
                                     <span className="mt-3 text-ivory/75 text-xs md:text-sm tracking-[0.12em] uppercase">
                                         Loading Image
                                     </span>
                                 </div>
-                            ) : null}
-                            <img
-                                src={previewProduct.image}
-                                alt={previewProduct.name}
-                                className={`max-w-[96vw] max-h-[92vh] object-contain bg-ivory/5 border border-ivory/20 transition-opacity duration-300 ${isPreviewImageLoading ? 'opacity-0' : 'opacity-100'}`}
-                                loading="eager"
-                                decoding="async"
-                                onLoad={() => setIsPreviewImageLoading(false)}
-                                onError={() => setIsPreviewImageLoading(false)}
-                            />
+                            ) : isPreviewImageError ? (
+                                <div className="text-center text-ivory/75">
+                                    <p className="text-xs md:text-sm tracking-[0.12em] uppercase">
+                                        Image failed to load
+                                    </p>
+                                </div>
+                            ) : (
+                                <img
+                                    src={previewProduct.image}
+                                    alt={previewProduct.name}
+                                    className="max-w-[96vw] max-h-[92vh] object-contain bg-ivory/5 border border-ivory/20"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            )}
                         </div>
                         <div className="mt-4 text-center">
                             <span
