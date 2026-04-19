@@ -338,7 +338,6 @@ export default function CategoryPage() {
                 subtitle={cat.description}
                 backgroundImage={heroBackgrounds[categorySlug] || cat.image}
                 height="medium"
-                showBackButton={Boolean(heroBackgrounds[categorySlug])}
             />
 
             {featuredCategory ? (
