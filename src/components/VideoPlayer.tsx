@@ -7,6 +7,8 @@ interface VideoPlayerProps {
     className?: string
 }
 
+const PLAYBACK_SPEED_OPTIONS = [0.5, 1, 1.5, 2] as const
+
 const formatTime = (seconds: number) => {
     if (!Number.isFinite(seconds) || seconds < 0) {
         return '0:00'
@@ -78,7 +80,7 @@ function IconButton({
             type="button"
             onClick={onClick}
             aria-label={label}
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-lg text-white transition-all duration-200 hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/40 ${
+            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg text-white transition-all duration-200 hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-9 sm:w-9 ${
                 active ? 'bg-black/60' : 'bg-transparent'
             }`}
         >
@@ -133,6 +135,21 @@ function VolumeHighIcon() {
     )
 }
 
+function SpinnerIcon() {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            className="h-8 w-8 animate-spin text-white"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden="true"
+        >
+            <path d="M21 12a9 9 0 1 1-9-9" strokeLinecap="round" />
+        </svg>
+    )
+}
+
 export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: VideoPlayerProps) {
     const containerRef = useRef<HTMLDivElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
@@ -147,6 +164,8 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
     const [currentTime, setCurrentTime] = useState(0)
     const [duration, setDuration] = useState(0)
     const [isFullscreen, setIsFullscreen] = useState(false)
+    const [isInitialLoading, setIsInitialLoading] = useState(true)
+    const [isBuffering, setIsBuffering] = useState(false)
 
     useEffect(() => {
         return () => {
@@ -164,6 +183,11 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
         document.addEventListener('fullscreenchange', syncFullscreenState)
         return () => document.removeEventListener('fullscreenchange', syncFullscreenState)
     }, [])
+
+    useEffect(() => {
+        setIsInitialLoading(true)
+        setIsBuffering(false)
+    }, [mp4Src, webmSrc])
 
     const keepControlsVisibleOnTouch = () => {
         setShowControls(true)
@@ -256,6 +280,12 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
         setPlaybackSpeed(speed)
     }
 
+    const cycleSpeed = () => {
+        const currentIndex = PLAYBACK_SPEED_OPTIONS.findIndex((speed) => speed === playbackSpeed)
+        const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % PLAYBACK_SPEED_OPTIONS.length : 1
+        changeSpeed(PLAYBACK_SPEED_OPTIONS[nextIndex])
+    }
+
     const toggleFullscreen = async () => {
         const container = containerRef.current
         const video = videoRef.current
@@ -290,6 +320,8 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
         }
     }
 
+    const shouldShowSpinner = isInitialLoading || (isBuffering && isPlaying)
+
     return (
         <div
             ref={containerRef}
@@ -309,6 +341,21 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
                 }}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleTimeUpdate}
+                onLoadedData={() => setIsInitialLoading(false)}
+                onLoadStart={() => {
+                    setIsInitialLoading(true)
+                    setIsBuffering(false)
+                }}
+                onCanPlay={() => {
+                    setIsInitialLoading(false)
+                    setIsBuffering(false)
+                }}
+                onWaiting={() => setIsBuffering(true)}
+                onPlaying={() => {
+                    setIsPlaying(true)
+                    setIsInitialLoading(false)
+                    setIsBuffering(false)
+                }}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
@@ -318,19 +365,32 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
                 <source src={mp4Src} type="video/mp4" />
             </video>
 
+            {shouldShowSpinner && (
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div
+                        className="flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 backdrop-blur-sm"
+                        aria-live="polite"
+                        aria-label="Video is loading"
+                    >
+                        <SpinnerIcon />
+                        <span className="text-sm font-medium text-white">Loading video...</span>
+                    </div>
+                </div>
+            )}
+
             <div
-                className={`absolute bottom-0 left-0 right-0 m-2 mx-auto w-[calc(100%-1rem)] max-w-xl rounded-2xl bg-[#11111198] p-4 backdrop-blur-md transition-all duration-500 ${
+                className={`absolute bottom-1.5 left-1/2 w-[calc(100%-0.75rem)] max-w-xl -translate-x-1/2 rounded-xl bg-[#11111198] p-2.5 backdrop-blur-md transition-all duration-500 sm:bottom-2 sm:w-[calc(100%-1rem)] sm:rounded-2xl sm:p-4 ${
                     showControls ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-5 opacity-0 blur-sm'
                 }`}
             >
-                <div className="mb-2 flex items-center gap-2">
-                    <span className="text-sm text-white">{formatTime(currentTime)}</span>
+                <div className="mb-1.5 flex items-center gap-1.5 sm:mb-2 sm:gap-2">
+                    <span className="text-xs text-white sm:text-sm">{formatTime(currentTime)}</span>
                     <CustomSlider value={progress} onChange={handleSeek} className="flex-1" />
-                    <span className="text-sm text-white">{formatTime(duration)}</span>
+                    <span className="text-xs text-white sm:text-sm">{formatTime(duration)}</span>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                    <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center justify-center gap-2 sm:justify-between">
+                    <div className="flex items-center gap-1.5 sm:gap-4">
                         <IconButton onClick={() => void togglePlay()} label={isPlaying ? 'Pause video' : 'Play video'}>
                             {isPlaying ? <PauseIcon /> : <PlayIcon />}
                         </IconButton>
@@ -345,7 +405,7 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
                                     <VolumeLowIcon />
                                 )}
                             </IconButton>
-                            <div className="w-20 sm:w-24">
+                            <div className="hidden w-24 sm:block">
                                 <CustomSlider value={volume * 100} onChange={handleVolumeChange} />
                             </div>
                         </div>
@@ -393,10 +453,19 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
                                 </svg>
                             )}
                         </IconButton>
+
+                        <button
+                            type="button"
+                            onClick={cycleSpeed}
+                            className="rounded-lg px-2 py-1 text-xs text-white transition-colors duration-200 hover:bg-black/60 sm:hidden"
+                            aria-label="Change playback speed"
+                        >
+                            {playbackSpeed}x
+                        </button>
                     </div>
 
-                    <div className="flex items-center gap-1">
-                        {[0.5, 1, 1.5, 2].map((speed) => (
+                    <div className="hidden items-center gap-1 sm:flex">
+                        {PLAYBACK_SPEED_OPTIONS.map((speed) => (
                             <button
                                 key={speed}
                                 type="button"
