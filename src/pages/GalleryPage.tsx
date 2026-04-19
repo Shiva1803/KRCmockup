@@ -9,7 +9,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Chief Minister Pushkar Singh Dhami Visit',
         desc: 'Visit of Honourable Chief Minister, Uttarakhand, Pushkar Singh Dhami to KRC Woollens.',
-        url: 'public/image 155.png',
+        url: '/image%20155.png',
         span: 'md:col-start-1 md:row-start-1 md:row-span-3',
     },
     {
@@ -17,7 +17,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Visit of Japanese Army Officers',
         desc: 'Visit of Japanese Army Officers to KRC Woollens.',
-        url: 'public/image 159.png',
+        url: '/image%20159.png',
         span: 'md:col-start-2 md:row-start-1 md:row-span-2',
     },
     {
@@ -25,7 +25,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Vice Admiral Rajesh Dhankhar AVSM, NM Visit',
         desc: 'Vice Admiral Rajesh Dhankhar AVSM, NM visited KRC Woollens.',
-        url: '/public/image 154.png',
+        url: '/image%20154.png',
         span: 'md:col-start-3 md:row-start-1 md:row-span-3',
     },
     {
@@ -33,7 +33,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Lt Gen Rajiv Ghai Visit',
         desc: 'Lt Gen Rajiv Ghai, SYSM, UYSM, AVSM, SM, Colonel of the Kumaon Regt, Naga Regt and Kumaon Scouts visited KRC Woollens.',
-        url: 'public/image 158.png',
+        url: '/image%20158.png',
         span: 'md:col-start-1 md:row-start-4 md:row-span-3',
     },
     {
@@ -41,7 +41,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Retd. Lieutenant General Gurmit Singh Visit',
         desc: 'Visit of Lieutenant General Gurmit Singh (Retd), PVSM, UYSM, AVSM, VSM, Governor of Uttarakhand to KRC Woollens.',
-        url: 'public/image 156.png',
+        url: '/image%20156.png',
         span: 'md:col-start-2 md:row-start-3 md:row-span-2',
     },
     {
@@ -49,7 +49,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Maj Gen Sudhanshu Sharma Visit ',
         desc: 'Maj Gen Sudhanshu Sharma, SM, VSM, Chief of Staff, HQ, 14 Corps',
-        url: '/public/image 163.png',
+        url: '/image%20163.png',
         span: 'md:col-start-3 md:row-start-4 md:row-span-3',
     },
     {
@@ -57,7 +57,7 @@ const galleryMediaItems: MediaItemType[] = [
         type: 'image',
         title: 'Lt Gen Rana Pratap Kalita Visit',
         desc: 'Lt Gen Rana Pratap Kalita (Retd), PVSM, UYSM, AVSM, SM, VSM then Colonel of the Kumaon Regt, Naga Regt and Kumaon Scouts visited KRC Woollens.',
-        url: 'public/image 157.png',
+        url: '/image%20157.png',
         span: 'md:col-start-2 md:row-start-5 md:row-span-2',
     },
 ]

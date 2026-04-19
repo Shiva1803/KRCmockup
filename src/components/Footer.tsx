@@ -38,7 +38,7 @@ export default function Footer() {
                                     to="/gallery"
                                     className="text-sm text-navy/60 hover:text-ochre transition-colors duration-300 tracking-wide"
                                 >
-                                    KRC Gallery Page
+                                    KRC Gallery
                                 </Link>
                             </li>
                             <li>

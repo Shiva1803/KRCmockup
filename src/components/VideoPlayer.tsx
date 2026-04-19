@@ -134,6 +134,7 @@ function VolumeHighIcon() {
 }
 
 export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: VideoPlayerProps) {
+    const containerRef = useRef<HTMLDivElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
     const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -145,6 +146,7 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
     const [showControls, setShowControls] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
     const [duration, setDuration] = useState(0)
+    const [isFullscreen, setIsFullscreen] = useState(false)
 
     useEffect(() => {
         return () => {
@@ -152,6 +154,15 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
                 clearTimeout(hideTimerRef.current)
             }
         }
+    }, [])
+
+    useEffect(() => {
+        const syncFullscreenState = () => {
+            setIsFullscreen(document.fullscreenElement === containerRef.current)
+        }
+
+        document.addEventListener('fullscreenchange', syncFullscreenState)
+        return () => document.removeEventListener('fullscreenchange', syncFullscreenState)
     }, [])
 
     const keepControlsVisibleOnTouch = () => {
@@ -245,8 +256,43 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
         setPlaybackSpeed(speed)
     }
 
+    const toggleFullscreen = async () => {
+        const container = containerRef.current
+        const video = videoRef.current
+
+        if (!container || !video) {
+            return
+        }
+
+        if (!document.fullscreenElement) {
+            try {
+                await container.requestFullscreen()
+                return
+            } catch {
+                // Continue with browser-specific video fallback.
+            }
+
+            const iosVideo = video as HTMLVideoElement & {
+                webkitEnterFullscreen?: () => void
+            }
+            if (typeof iosVideo.webkitEnterFullscreen === 'function') {
+                iosVideo.webkitEnterFullscreen()
+            }
+            return
+        }
+
+        if (document.fullscreenElement === container) {
+            try {
+                await document.exitFullscreen()
+            } catch {
+                // No-op; fullscreen exit can fail in restricted contexts.
+            }
+        }
+    }
+
     return (
         <div
+            ref={containerRef}
             className={`relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm ${className ?? ''}`}
             onMouseEnter={() => setShowControls(true)}
             onMouseLeave={() => setShowControls(false)}
@@ -303,6 +349,50 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
                                 <CustomSlider value={volume * 100} onChange={handleVolumeChange} />
                             </div>
                         </div>
+
+                        <IconButton
+                            onClick={() => void toggleFullscreen()}
+                            label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+                            active={isFullscreen}
+                        >
+                            {isFullscreen ? (
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M9 3H5a2 2 0 0 0-2 2v4" />
+                                    <path d="M15 3h4a2 2 0 0 1 2 2v4" />
+                                    <path d="M9 21H5a2 2 0 0 1-2-2v-4" />
+                                    <path d="M15 21h4a2 2 0 0 0 2-2v-4" />
+                                    <path d="m8 8 3 3" />
+                                    <path d="m16 8-3 3" />
+                                    <path d="m8 16 3-3" />
+                                    <path d="m16 16-3-3" />
+                                </svg>
+                            ) : (
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+                                    <path d="M16 3h3a2 2 0 0 1 2 2v3" />
+                                    <path d="M8 21H5a2 2 0 0 1-2-2v-3" />
+                                    <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+                                    <path d="M9 9 3 3" />
+                                    <path d="m15 9 6-6" />
+                                    <path d="m9 15-6 6" />
+                                    <path d="m15 15 6 6" />
+                                </svg>
+                            )}
+                        </IconButton>
                     </div>
 
                     <div className="flex items-center gap-1">
