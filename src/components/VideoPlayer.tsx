@@ -325,7 +325,7 @@ export default function VideoPlayer({ mp4Src, webmSrc, poster, className }: Vide
     return (
         <div
             ref={containerRef}
-            className={`relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm ${className ?? ''}`}
+            className={`krc-video-player relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm ${className ?? ''}`}
             onMouseEnter={() => setShowControls(true)}
             onMouseLeave={() => setShowControls(false)}
             onTouchStart={keepControlsVisibleOnTouch}
