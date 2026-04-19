@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import HoverZoomImage from '../components/HoverZoomImage'
 import HeroSection from '../components/HeroSection'
 import SectionHeading from '../components/SectionHeading'
 import { categories } from '../data/products'
@@ -35,12 +34,12 @@ export default function ProductsPage() {
                                 }}
                             >
                                 <div className="md:hidden" style={{ aspectRatio: '173.74 / 120.82' }}>
-                                    <HoverZoomImage
+                                    <img
                                         src={cat.image}
                                         alt={cat.name}
-                                        className="h-full w-full"
-                                        imageClassName="opacity-70 group-hover:opacity-50"
-                                        zoomScale={1.75}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
                                     />
                                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-2">
                                         <span className="text-gold text-[8px] tracking-[0.15em] uppercase font-light">
@@ -55,12 +54,12 @@ export default function ProductsPage() {
                                     </div>
                                 </div>
                                 <div className="hidden md:block" style={{ aspectRatio: '612.16 / 425.7' }}>
-                                    <HoverZoomImage
+                                    <img
                                         src={cat.image}
                                         alt={cat.name}
-                                        className="h-full w-full"
-                                        imageClassName="opacity-70 group-hover:opacity-50"
-                                        zoomScale={1.75}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700"
                                     />
                                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
                                         <span className="text-gold text-xl tracking-[0.2em] uppercase font-light">

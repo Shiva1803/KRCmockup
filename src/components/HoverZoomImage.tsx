@@ -1,4 +1,4 @@
-import { type CSSProperties, type PointerEvent, useRef, useState } from 'react'
+import { type CSSProperties, type PointerEvent, type SyntheticEvent, useRef, useState } from 'react'
 
 type HoverZoomImageProps = {
     src: string
@@ -8,6 +8,7 @@ type HoverZoomImageProps = {
     style?: CSSProperties
     zoomScale?: number
     loading?: 'eager' | 'lazy'
+    onImageError?: (event: SyntheticEvent<HTMLImageElement>) => void
 }
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value))
@@ -20,6 +21,7 @@ export default function HoverZoomImage({
     style,
     zoomScale = 1.85,
     loading = 'lazy',
+    onImageError,
 }: HoverZoomImageProps) {
     const containerRef = useRef<HTMLDivElement>(null)
     const [isActive, setIsActive] = useState(false)
@@ -79,6 +81,8 @@ export default function HoverZoomImage({
                 src={src}
                 alt={alt}
                 loading={loading}
+                decoding="async"
+                onError={onImageError}
                 className={`h-full w-full transform-gpu object-cover transition-transform duration-300 ease-out will-change-transform ${imageClassName}`.trim()}
                 style={{
                     transformOrigin: 'var(--zoom-origin-x) var(--zoom-origin-y)',

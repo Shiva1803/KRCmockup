@@ -5,6 +5,7 @@ import { useScrollDirection } from '../hooks/useAnimations'
 const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/products', label: 'Products' },
+    { to: '/gallery', label: 'KRC Gallery' },
     { to: '/legacy', label: 'The Legacy' },
     { to: '/contact', label: 'Contact' },
 ]

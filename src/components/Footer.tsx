@@ -34,6 +34,14 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link
+                                    to="/gallery"
+                                    className="text-sm text-navy/60 hover:text-ochre transition-colors duration-300 tracking-wide"
+                                >
+                                    KRC Gallery
+                                </Link>
+                            </li>
+                            <li>
                                 <a
                                     href="/KRC_Catalogue.pdf"
                                     download

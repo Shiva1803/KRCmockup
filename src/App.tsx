@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
 import CategoryPage from './pages/CategoryPage'
-import ProductDetailPage from './pages/ProductDetailPage'
+import GalleryPage from './pages/GalleryPage'
 import LegacyPage from './pages/LegacyPage'
 import ContactPage from './pages/ContactPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
@@ -29,7 +29,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:category" element={<CategoryPage />} />
-          <Route path="/products/:category/:productId" element={<ProductDetailPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/legacy" element={<LegacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />

@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import HoverZoomImage from '../components/HoverZoomImage'
 import HeroSection from '../components/HeroSection'
 import SectionHeading from '../components/SectionHeading'
-import { type Product, getCategoryBySlug, getProductsByCategory } from '../data/products'
+import { type Product, getCategoryBySlug, getCompressedProductImage, getProductsByCategory } from '../data/products'
 import { useFadeIn } from '../hooks/useAnimations'
 
 type FeaturedCategoryConfig = {
@@ -137,25 +137,47 @@ function FeaturedProductGrid({
     products,
     gradientClassName,
     marqueeTitles = false,
+    onProductClick,
 }: {
     products: Product[]
     gradientClassName: string
     marqueeTitles?: boolean
+    onProductClick?: (product: Product) => void
 }) {
     return (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 transition-all duration-300">
             {products.map((product, index) => (
                 <div
                     key={product.id}
-                    className="fade-in group overflow-hidden flex flex-col"
+                    className={`fade-in group overflow-hidden flex flex-col ${onProductClick ? 'cursor-zoom-in' : ''}`}
                     style={{ transitionDelay: `${index * 60}ms` }}
+                    role={onProductClick ? 'button' : undefined}
+                    tabIndex={onProductClick ? 0 : undefined}
+                    onClick={() => onProductClick?.(product)}
+                    onKeyDown={(event) => {
+                        if (!onProductClick) {
+                            return
+                        }
+
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault()
+                            onProductClick(product)
+                        }
+                    }}
                 >
-                    <HoverZoomImage
-                        src={product.image}
-                        alt={product.name}
-                        className="overflow-hidden"
-                        style={{ aspectRatio: '328 / 262.93' }}
-                    />
+                    <div className="overflow-hidden" style={{ aspectRatio: '328 / 262.93' }}>
+                        <img
+                            src={getCompressedProductImage(product.image)}
+                            alt={product.name}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                            onError={(event) => {
+                                event.currentTarget.onerror = null
+                                event.currentTarget.src = product.image
+                            }}
+                        />
+                    </div>
                     <div className={`${gradientClassName} p-5 md:p-6 flex-1 flex flex-col`}>
                         <ProductName product={product} marqueeTitles={marqueeTitles} />
                         <div className="mt-2">
@@ -172,25 +194,41 @@ function FeaturedProductGrid({
 
 function LinkedProductGrid({
     products,
-    categorySlug,
+    onProductClick,
 }: {
     products: Product[]
-    categorySlug: string
+    onProductClick: (product: Product) => void
 }) {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 transition-all duration-300">
             {products.map((product, index) => (
-                <Link
+                <article
                     key={product.id}
-                    to={`/products/${categorySlug}/${product.id}`}
-                    className="fade-in group bg-white border border-navy/5 overflow-hidden hover:shadow-xl hover:shadow-navy/5 transition-all duration-500"
+                    className="fade-in group bg-white border border-navy/5 overflow-hidden hover:shadow-xl hover:shadow-navy/5 transition-all duration-500 cursor-zoom-in"
                     style={{ transitionDelay: `${index * 60}ms` }}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => onProductClick(product)}
+                    onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault()
+                            onProductClick(product)
+                        }
+                    }}
                 >
-                    <HoverZoomImage
-                        src={product.image}
-                        alt={product.name}
-                        className="aspect-square"
-                    />
+                    <div className="aspect-square overflow-hidden">
+                        <img
+                            src={getCompressedProductImage(product.image)}
+                            alt={product.name}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                            onError={(event) => {
+                                event.currentTarget.onerror = null
+                                event.currentTarget.src = product.image
+                            }}
+                        />
+                    </div>
                     <div className="p-5 md:p-6">
                         <h3 className="font-heading text-lg md:text-xl font-bold text-navy group-hover:text-maroon transition-colors duration-300">
                             {product.name}
@@ -202,12 +240,12 @@ function LinkedProductGrid({
                             <span className="text-ochre font-semibold text-lg font-heading">
                                 {product.price}
                             </span>
-                            <span className="text-gold text-xs tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-300">
-                                View →
+                            <span className="text-gold text-xs tracking-widest uppercase">
+                                Tap to Preview
                             </span>
                         </div>
                     </div>
-                </Link>
+                </article>
             ))}
         </div>
     )
@@ -216,10 +254,67 @@ function LinkedProductGrid({
 export default function CategoryPage() {
     const { category } = useParams<{ category: string }>()
     const fadeRef = useFadeIn()
+    const [previewProduct, setPreviewProduct] = useState<Product | null>(null)
+    const [isPreviewImageLoading, setIsPreviewImageLoading] = useState(false)
+    const [isPreviewImageError, setIsPreviewImageError] = useState(false)
 
     const categorySlug = category || ''
     const cat = getCategoryBySlug(categorySlug)
     const products = getProductsByCategory(categorySlug)
+
+    useEffect(() => {
+        if (!previewProduct) {
+            return
+        }
+
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setPreviewProduct(null)
+            }
+        }
+
+        const previousBodyOverflow = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+        window.addEventListener('keydown', handleEscape)
+
+        return () => {
+            document.body.style.overflow = previousBodyOverflow
+            window.removeEventListener('keydown', handleEscape)
+        }
+    }, [previewProduct])
+
+    useEffect(() => {
+        if (!previewProduct) {
+            setIsPreviewImageLoading(false)
+            setIsPreviewImageError(false)
+            return
+        }
+
+        let isCancelled = false
+        const preloadImage = new Image()
+
+        setIsPreviewImageLoading(true)
+        setIsPreviewImageError(false)
+
+        preloadImage.onload = () => {
+            if (!isCancelled) {
+                setIsPreviewImageLoading(false)
+            }
+        }
+
+        preloadImage.onerror = () => {
+            if (!isCancelled) {
+                setIsPreviewImageLoading(false)
+                setIsPreviewImageError(true)
+            }
+        }
+
+        preloadImage.src = previewProduct.image
+
+        return () => {
+            isCancelled = true
+        }
+    }, [previewProduct])
 
     if (!cat) {
         return (
@@ -243,7 +338,6 @@ export default function CategoryPage() {
                 subtitle={cat.description}
                 backgroundImage={heroBackgrounds[categorySlug] || cat.image}
                 height="medium"
-                showBackButton={Boolean(heroBackgrounds[categorySlug])}
             />
 
             {featuredCategory ? (
@@ -255,6 +349,7 @@ export default function CategoryPage() {
                                 products={products}
                                 gradientClassName={featuredCategory.gradientClassName}
                                 marqueeTitles={featuredCategory.marqueeTitles}
+                                onProductClick={setPreviewProduct}
                             />
                         </div>
                     </section>
@@ -280,6 +375,7 @@ export default function CategoryPage() {
                                         <FeaturedProductGrid
                                             products={sectionProducts}
                                             gradientClassName="bg-gradient-to-r from-[#191A2F] to-[#354818]"
+                                            onProductClick={setPreviewProduct}
                                         />
                                     </div>
                                 )
@@ -311,11 +407,66 @@ export default function CategoryPage() {
                             />
                             <LinkedProductGrid
                                 products={products}
-                                categorySlug={categorySlug}
+                                onProductClick={setPreviewProduct}
                             />
                         </div>
                     </section>
                 </>
+            )}
+
+            {previewProduct && (
+                <div
+                    className="fixed inset-0 z-[120] bg-navy/90 backdrop-blur-sm p-4 md:p-8 flex items-center justify-center"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={`${previewProduct.name} full resolution image`}
+                    onClick={() => setPreviewProduct(null)}
+                >
+                    <div
+                        className="relative max-w-[96vw] max-h-[92vh]"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            onClick={() => setPreviewProduct(null)}
+                            className="absolute -top-12 right-0 text-ivory/80 hover:text-ivory text-xs md:text-sm tracking-[0.2em] uppercase border border-ivory/40 px-3 py-1.5 bg-navy/60"
+                        >
+                            Close
+                        </button>
+                        <div className="relative min-h-[220px] md:min-h-[320px] flex items-center justify-center">
+                            {isPreviewImageLoading ? (
+                                <div className="flex flex-col items-center justify-center">
+                                    <span className="relative h-10 w-10">
+                                        <span className="absolute inset-0 rounded-full border-2 border-ivory/35" />
+                                        <span className="absolute inset-0 rounded-full border-2 border-transparent border-t-gold animate-spin" />
+                                    </span>
+                                </div>
+                            ) : isPreviewImageError ? (
+                                <div className="text-center text-ivory/75">
+                                    <p className="text-xs md:text-sm tracking-[0.12em] uppercase">
+                                        Image failed to load
+                                    </p>
+                                </div>
+                            ) : (
+                                <img
+                                    src={previewProduct.image}
+                                    alt={previewProduct.name}
+                                    className="max-w-[96vw] max-h-[92vh] object-contain bg-ivory/5 border border-ivory/20"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            )}
+                        </div>
+                        <div className="mt-4 text-center">
+                            <span
+                                className="inline-flex items-center justify-center px-5 py-2.5 bg-gold text-navy text-xs md:text-sm font-semibold tracking-[0.18em] uppercase max-w-[90vw] md:max-w-[70vw] whitespace-nowrap overflow-hidden text-ellipsis"
+                                title={previewProduct.name}
+                            >
+                                {previewProduct.name}
+                            </span>
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     )

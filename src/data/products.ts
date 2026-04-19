@@ -1561,3 +1561,14 @@ export function getProductById(productId: string): Product | undefined {
 export function getCategoryBySlug(slug: string): Category | undefined {
     return categories.find((c) => c.slug === slug)
 }
+
+const localCompressibleImagePattern = /^\/.+\.(png|jpe?g|webp|avif)$/i
+
+export function getCompressedProductImage(imagePath: string): string {
+    if (!localCompressibleImagePattern.test(imagePath)) {
+        return imagePath
+    }
+
+    const basePath = imagePath.replace(/\.[^/.]+$/, '')
+    return `/compressed${basePath}-compressed.webp`
+}

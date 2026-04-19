@@ -12,12 +12,16 @@ export default function HomePage() {
                 {/* Video Background */}
                 <video
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
-                    src="/headervideoforhome-compressed.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
-                />
+                    preload="metadata"
+                    poster="/kumaonhills.webp"
+                >
+                    <source src="/headervideoforhome-960.webm" type="video/webm" />
+                    <source src="/headervideoforhome-960.mp4" type="video/mp4" />
+                </video>
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-navy/70" />
                 {/* Decorative bottom line */}
@@ -50,7 +54,7 @@ export default function HomePage() {
                             <div className="relative">
                                 <div className="aspect-[4/5] bg-navy/10 overflow-hidden">
                                     <img
-                                        src="/veernari.webp"
+                                        src="/veernari-home.jpeg"
                                         alt="Veer Nari artisan"
                                         loading="lazy"
                                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -69,7 +73,7 @@ export default function HomePage() {
                             <h2 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy leading-tight">
                                 Empowering the
                                 <br />
-                                <span className="text-maroon">Veer Nari</span>
+                                <span className="text-maroon">Veer Naris</span>
                             </h2>
                             <div className="mt-4 w-16 h-0.5 bg-[#8A2128]" />
                             <p className="mt-8 text-navy/70 text-base md:text-lg leading-relaxed">
